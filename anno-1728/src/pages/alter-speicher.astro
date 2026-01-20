@@ -1,11 +1,193 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<h1>Alter Speicher</h1>
+<Layout title="Alter Speicher - Anno 1728">
+	<div class="page-header">
+		<h1>Alter Speicher</h1>
+		<p class="subtitle">Gemütliche Ferienwohnung mit rustikalem Charme</p>
+	</div>
 
-Das ist unsere kleine Ferienwohnung in Wiesbaden-Auringen.
+	<div class="hero-image">
+		<img src="/alter-speicher.jpg" alt="Alter Speicher" />
+	</div>
 
-<div>
-	<img src="alter-speicher.jpg" width="50%" />
-</div>
+	<div class="intro-text">
+		<p>
+			Der Alte Speicher ist unsere charmante kleine Ferienwohnung in Wiesbaden-Auringen.
+			Perfekt für Paare oder Alleinreisende, die das besondere Ambiente eines
+			historischen Gebäudes genießen möchten. Hier verbinden sich rustikaler Charme
+			mit modernem Komfort.
+		</p>
+	</div>
+
+	<section class="highlights-section">
+		<h2>Highlights</h2>
+		<div class="highlights-grid">
+			<div class="highlight-card">
+				<span class="highlight-icon">👥</span>
+				<h3>Für 2 Personen</h3>
+				<p>Ideal für Paare oder Alleinreisende</p>
+			</div>
+			<div class="highlight-card">
+				<span class="highlight-icon">🏡</span>
+				<h3>Rustikales Ambiente</h3>
+				<p>Historischer Charme trifft modernen Komfort</p>
+			</div>
+			<div class="highlight-card">
+				<span class="highlight-icon">🌅</span>
+				<h3>Ruhige Lage</h3>
+				<p>Entspannen Sie in idyllischer Umgebung</p>
+			</div>
+		</div>
+	</section>
+
+	<div class="cta-box">
+		<p>Entdecken Sie den Charme des Alten Speichers!</p>
+		<div class="cta-buttons">
+			<a href="/buchungen/" class="button primary">Jetzt buchen</a>
+			<a href="/vorderhaus/" class="button secondary">Zum Vorderhaus</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2.2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.hero-image {
+		border-radius: 12px;
+		overflow: hidden;
+		margin-bottom: 2rem;
+		box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+	}
+
+	.hero-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.intro-text {
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		padding: 1.5rem;
+		border-radius: 10px;
+		border-left: 4px solid #48bb78;
+		margin-bottom: 2rem;
+	}
+
+	.intro-text p {
+		margin: 0;
+		color: #444;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+
+	.highlights-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.highlight-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.5rem 1rem;
+		text-align: center;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.highlight-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+	}
+
+	.highlight-icon {
+		font-size: 2.5rem;
+		display: block;
+		margin-bottom: 0.75rem;
+	}
+
+	.highlight-card h3 {
+		font-size: 1rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.highlight-card p {
+		font-size: 0.85rem;
+		color: #666;
+		margin: 0;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #276749 0%, #1e5239 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #48bb78;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	.button.secondary:hover {
+		background: rgba(255,255,255,0.25);
+	}
+</style>

@@ -1,0 +1,313 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Ausflüge - Anno 1728">
+	<div class="page-header">
+		<h1>Ausflüge in Wiesbaden</h1>
+		<p class="subtitle">Entdecken Sie die Region rund um unser Ferienhaus</p>
+	</div>
+
+	<div class="intro-box">
+		<p>
+			Von unserem Ferienhaus aus erreichen Sie zahlreiche Sehenswürdigkeiten und Ausflugsziele.
+			Wir haben für Sie drei detaillierte Touren zusammengestellt – je nachdem, wie viel Zeit Sie haben
+			und ob Sie mit Kindern reisen.
+		</p>
+		<p class="tip"><strong>Tipp:</strong> Für die meisten Ausflüge ist ein Auto sehr empfehlenswert.</p>
+	</div>
+
+	<section class="tours-section">
+		<h2>Unsere Tourenvorschläge</h2>
+		<div class="tour-cards">
+			<a href="/ausfluege/wiesbaden-ohne-auto/" class="tour-card">
+				<span class="tour-icon">🚌</span>
+				<div class="tour-content">
+					<h3>Wiesbaden an einem Tag ohne Auto</h3>
+					<p>Erkunden Sie die Landeshauptstadt mit Bus und zu Fuß – perfekt für einen entspannten Tagesausflug.</p>
+					<span class="tour-link">Tour ansehen →</span>
+				</div>
+			</a>
+			<a href="/ausfluege/wochenende-rheingau/" class="tour-card">
+				<span class="tour-icon">🍷</span>
+				<div class="tour-content">
+					<h3>Ein Wochenende in Wiesbaden und im Rheingau</h3>
+					<p>Zwei Tage voller Kultur, Wein und unvergesslicher Ausblicke auf das Rheintal.</p>
+					<span class="tour-link">Tour ansehen →</span>
+				</div>
+			</a>
+			<a href="/ausfluege/mit-kindern/" class="tour-card">
+				<span class="tour-icon">👨‍👩‍👧‍👦</span>
+				<div class="tour-content">
+					<h3>Wiesbaden mit Kindern</h3>
+					<p>Spielplätze, Tierparks, Schwimmbäder und mehr – Spaß für die ganze Familie!</p>
+					<span class="tour-link">Tour ansehen →</span>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<section class="destinations-section">
+		<h2>Beliebte Ausflugsziele</h2>
+		<div class="destinations-grid">
+			<div class="destination-group">
+				<h3>In Wiesbaden</h3>
+				<ul>
+					<li>Neroberg mit Nerobergbahn</li>
+					<li>Kurhaus & Spielbank</li>
+					<li>Hessischer Landtag</li>
+					<li>Marktkirche</li>
+					<li>Kurpark & Opelbad</li>
+				</ul>
+			</div>
+			<div class="destination-group">
+				<h3>Im Rheingau</h3>
+				<ul>
+					<li>Rüdesheim & Drosselgasse</li>
+					<li>Niederwalddenkmal (Germania)</li>
+					<li>Schloss Johannisberg</li>
+					<li>Kloster Eberbach</li>
+					<li>Eltville am Rhein</li>
+				</ul>
+			</div>
+			<div class="destination-group">
+				<h3>Im Taunus</h3>
+				<ul>
+					<li>Großer Feldberg</li>
+					<li>Idstein (Altstadt)</li>
+					<li>Bad Camberg</li>
+					<li>Limburg (Dom)</li>
+					<li>Eppstein (Burg)</li>
+				</ul>
+			</div>
+			<div class="destination-group">
+				<h3>In Mainz</h3>
+				<ul>
+					<li>Historische Altstadt</li>
+					<li>St. Stephan (Chagall-Fenster)</li>
+					<li>Gutenberg-Museum</li>
+					<li>Römisches Theater</li>
+					<li>Museum für antike Schifffahrt</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<div class="cta-box">
+		<p>Planen Sie Ihren Aufenthalt!</p>
+		<div class="cta-buttons">
+			<a href="/essen/" class="button primary">Restaurant-Tipps</a>
+			<a href="/buchungen/" class="button secondary">Jetzt buchen</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2.2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.intro-box {
+		background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+		color: #fff;
+		padding: 1.5rem 2rem;
+		border-radius: 12px;
+		margin-bottom: 2rem;
+	}
+
+	.intro-box p {
+		margin: 0 0 0.75rem 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	.intro-box p:last-child {
+		margin-bottom: 0;
+	}
+
+	.intro-box .tip {
+		background: rgba(255,255,255,0.1);
+		padding: 0.75rem 1rem;
+		border-radius: 6px;
+		font-size: 0.95rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+
+	.tours-section {
+		margin-bottom: 2.5rem;
+	}
+
+	.tour-cards {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.tour-card {
+		display: flex;
+		gap: 1.25rem;
+		padding: 1.5rem;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		text-decoration: none;
+		color: inherit;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.tour-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+	}
+
+	.tour-icon {
+		font-size: 2.5rem;
+		width: 60px;
+		height: 60px;
+		background: #f8f9fa;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.tour-content h3 {
+		font-size: 1.15rem;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.tour-content p {
+		color: #555;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		margin-bottom: 0.75rem;
+	}
+
+	.tour-link {
+		color: #3182ce;
+		font-size: 0.9rem;
+		font-weight: 500;
+	}
+
+	.destinations-section {
+		margin-bottom: 2rem;
+	}
+
+	.destinations-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+	}
+
+	.destination-group {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.25rem;
+	}
+
+	.destination-group h3 {
+		font-size: 1rem;
+		color: #333;
+		margin-bottom: 0.75rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid #e0e0e0;
+	}
+
+	.destination-group ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.destination-group li {
+		padding: 0.4rem 0;
+		color: #555;
+		font-size: 0.9rem;
+		border-bottom: 1px solid #f0f0f0;
+	}
+
+	.destination-group li:last-child {
+		border-bottom: none;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #276749 0%, #1e5239 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #48bb78;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	.button.secondary:hover {
+		background: rgba(255,255,255,0.25);
+	}
+
+	@media (max-width: 600px) {
+		.tour-card {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.tour-icon {
+			margin: 0 auto;
+		}
+	}
+</style>

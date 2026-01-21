@@ -1,0 +1,334 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Wiesbaden ohne Auto - Anno 1728">
+	<div class="page-header">
+		<h1>Wiesbaden an einem Tag ohne Auto</h1>
+		<p class="subtitle">Erkunden Sie die Landeshauptstadt mit Bus und zu Fuß</p>
+	</div>
+
+	<div class="intro-box">
+		<p>
+			<strong>Anreise:</strong> Starten Sie am Dernschen Gelände – erreichbar mit der Buslinie 21
+			von Alt Auringen (ca. 20 Minuten) oder mit dem Fahrrad.
+		</p>
+	</div>
+
+	<section class="itinerary">
+		<h2>Ihre Tour durch Wiesbaden</h2>
+
+		<div class="stop">
+			<div class="stop-number">1</div>
+			<div class="stop-content">
+				<h3>Rathaus & Hessischer Landtag</h3>
+				<p>Beginnen Sie am Rathaus mit seinem Miniaturmodell. Gegenüber sehen Sie den Hessischen Landtag.</p>
+			</div>
+		</div>
+
+		<div class="stop">
+			<div class="stop-number">2</div>
+			<div class="stop-content">
+				<h3>Marktkirche</h3>
+				<p>Besuchen Sie die neugotische Marktkirche – das Wahrzeichen Wiesbadens.</p>
+			</div>
+		</div>
+
+		<div class="stop highlight">
+			<div class="stop-number">☕</div>
+			<div class="stop-content">
+				<h3>Frühstück</h3>
+				<p><strong>Café Maldaner</strong> (Reservierung empfohlen) oder bei gutem Wetter das <strong>Aurum</strong>.</p>
+			</div>
+		</div>
+
+		<div class="stop">
+			<div class="stop-number">3</div>
+			<div class="stop-content">
+				<h3>Römertor & Kochbrunnen</h3>
+				<p>Kurze Besichtigung der historischen Stätten – der Kochbrunnen ist eine der heißesten Thermalquellen Europas.</p>
+			</div>
+		</div>
+
+		<div class="stop featured">
+			<div class="stop-number">4</div>
+			<div class="stop-content">
+				<h3>Nerobergbahn</h3>
+				<p>Fahren Sie mit der wasserbetriebenen Standseilbahn auf den Neroberg. Fahrräder müssen hochgeschoben werden.</p>
+			</div>
+		</div>
+
+		<div class="neroberg-options">
+			<h3>Auf dem Neroberg</h3>
+			<div class="options-grid">
+				<div class="option-card">
+					<span class="option-icon">🗼</span>
+					<h4>Der Turm</h4>
+					<p>Restaurant mit herrlichem Blick über die Stadt</p>
+				</div>
+				<div class="option-card">
+					<span class="option-icon">🏊</span>
+					<h4>Opelbad</h4>
+					<p>Freibad mit Panoramablick – bei gutem Wetter ein Muss!</p>
+				</div>
+				<div class="option-card">
+					<span class="option-icon">📸</span>
+					<h4>Löwenterrasse</h4>
+					<p>Der beste Aussichtspunkt für Fotos</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="stop">
+			<div class="stop-number">5</div>
+			<div class="stop-content">
+				<h3>Kurhaus Wiesbaden</h3>
+				<p>Erleben Sie den prachtvollen Architekturkomplex mit Kolonnaden und dem Hessischen Staatstheater.</p>
+			</div>
+		</div>
+
+		<div class="stop highlight">
+			<div class="stop-number">🍽️</div>
+			<div class="stop-content">
+				<h3>Abendessen</h3>
+				<p><strong>Käfer's</strong> für gehobene Küche oder das Michelin-Stern-Restaurant <strong>Ente</strong>.</p>
+			</div>
+		</div>
+
+		<div class="stop">
+			<div class="stop-number">6</div>
+			<div class="stop-content">
+				<h3>Spielbank Wiesbaden</h3>
+				<p>Für Gaming-Enthusiasten – eines der traditionsreichsten Casinos Deutschlands.</p>
+			</div>
+		</div>
+	</section>
+
+	<div class="return-info">
+		<h3>Rückweg</h3>
+		<p>Spazieren Sie durch den Kurpark zum Apothekergarten, dann mit der Buslinie 21 ab Plutoweg oder Blumenstraße zurück nach Auringen.</p>
+	</div>
+
+	<div class="cta-box">
+		<p>Mehr Ausflugstipps entdecken</p>
+		<div class="cta-buttons">
+			<a href="/ausfluege/" class="button primary">Alle Touren</a>
+			<a href="/ausfluege/wochenende-rheingau/" class="button secondary">Wochenende im Rheingau</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.intro-box {
+		background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+		color: #fff;
+		padding: 1.25rem 1.5rem;
+		border-radius: 10px;
+		margin-bottom: 2rem;
+	}
+
+	.intro-box p {
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.itinerary {
+		margin-bottom: 2rem;
+	}
+
+	.stop {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		padding: 1rem;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+	}
+
+	.stop.highlight {
+		background: linear-gradient(135deg, #faf5e4 0%, #f5edd6 100%);
+		border-color: #d69e2e;
+	}
+
+	.stop.featured {
+		background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+		border-color: #3182ce;
+	}
+
+	.stop-number {
+		width: 40px;
+		height: 40px;
+		background: #333;
+		color: #fff;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		flex-shrink: 0;
+	}
+
+	.stop.highlight .stop-number,
+	.stop.featured .stop-number {
+		background: transparent;
+		font-size: 1.5rem;
+	}
+
+	.stop-content h3 {
+		font-size: 1.05rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.stop-content p {
+		color: #555;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.neroberg-options {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 10px;
+		margin-bottom: 1rem;
+	}
+
+	.neroberg-options h3 {
+		text-align: center;
+		font-size: 1.1rem;
+		color: #333;
+		margin-bottom: 1rem;
+	}
+
+	.options-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 1rem;
+	}
+
+	.option-card {
+		background: #fff;
+		padding: 1rem;
+		border-radius: 8px;
+		text-align: center;
+		border: 1px solid #e0e0e0;
+	}
+
+	.option-icon {
+		font-size: 1.5rem;
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+
+	.option-card h4 {
+		font-size: 0.95rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.option-card p {
+		font-size: 0.8rem;
+		color: #666;
+		margin: 0;
+	}
+
+	.return-info {
+		background: #e9ecef;
+		padding: 1.25rem;
+		border-radius: 10px;
+		margin-bottom: 2rem;
+	}
+
+	.return-info h3 {
+		font-size: 1rem;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.return-info p {
+		color: #555;
+		font-size: 0.9rem;
+		margin: 0;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #3182ce;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	@media (max-width: 600px) {
+		.stop {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.stop-number {
+			margin: 0 auto;
+		}
+	}
+</style>

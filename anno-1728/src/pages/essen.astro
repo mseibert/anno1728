@@ -1,0 +1,272 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Essen & Restaurants - Anno 1728">
+	<div class="page-header">
+		<h1>Essen & Restaurants</h1>
+		<p class="subtitle">Unsere Empfehlungen rund um Wiesbaden-Auringen</p>
+	</div>
+
+	<section class="category-section">
+		<h2>Frühstück</h2>
+		<div class="restaurant-grid">
+			<div class="restaurant-card">
+				<h3>Wunderbar</h3>
+				<p class="location">Am Stadtbahnhof 1, 65817 Eppstein</p>
+				<p>Gemütliches Frühstück in der Nähe des Hauptbahnhofs.</p>
+			</div>
+			<div class="restaurant-card">
+				<h3>Milchbar</h3>
+				<p class="location">Bahnhofstr. 1, 65527 Niedernhausen</p>
+				<p>Beliebter Frühstücksspot mit hausgemachten Spezialitäten.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Regionale Küche</h2>
+		<div class="restaurant-grid">
+			<div class="restaurant-card featured">
+				<h3>Hinkelhaus</h3>
+				<p class="location">August-Ruf-Straße 44, 65207 Wiesbaden</p>
+				<p>Deftige regionale Küche. Dienstags gibt es ein beliebtes Buffet.</p>
+			</div>
+			<div class="restaurant-card featured">
+				<h3>Hockenberger Mühle</h3>
+				<p>Beliebtes Ausflugsziel mit traditioneller hessischer Küche, schöner Terrasse und großem Spielplatz für Kinder.</p>
+			</div>
+			<div class="restaurant-card featured">
+				<h3>Berggasthof Kellerskopf</h3>
+				<p>Regional-mediterrane Küche mit Kinderspielzimmer und Aussichtsturm mit Blick über die Stadt.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Gehobene & Internationale Küche</h2>
+		<div class="restaurant-grid">
+			<div class="restaurant-card">
+				<h3>Kaisertempel</h3>
+				<p class="location">Eppstein</p>
+				<p>Italienisches Restaurant mit fantastischem Ausblick über die Landschaft.</p>
+			</div>
+			<div class="restaurant-card">
+				<h3>Restaurant Ente</h3>
+				<p class="location">Kaiser-Friedrich-Platz, Wiesbaden</p>
+				<p>Eine Wiesbadener Institution für gehobene Küche.</p>
+			</div>
+			<div class="restaurant-card highlight">
+				<span class="badge">Michelin-Stern</span>
+				<h3>Schellers Restaurant</h3>
+				<p class="location">Philosophenweg, Bad Homburg</p>
+				<p>Spitzenrestaurant mit Michelin-Stern.</p>
+			</div>
+			<div class="restaurant-card">
+				<h3>Thai Chili</h3>
+				<p class="location">Niedernhausen</p>
+				<p>Authentische Thai-Küche. Wenige Plätze – Reservierung empfohlen!</p>
+			</div>
+			<div class="restaurant-card">
+				<h3>Firenze</h3>
+				<p class="location">Niedernhausen</p>
+				<p>Eine Institution! Hochwertige italienische Küche mit großer Terrasse im Sommer.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section highlight-section">
+		<h2>Saisonale Veranstaltungen</h2>
+		<div class="event-card">
+			<span class="event-icon">🍷</span>
+			<div class="event-content">
+				<h3>Auringer Vereinssommer</h3>
+				<p>Im Sommer gibt es freitags abends Weinstände mit regionalen Winzern und wechselnden kulinarischen Angeboten der örtlichen Vereine.</p>
+			</div>
+		</div>
+	</section>
+
+	<div class="cta-box">
+		<p>Entdecken Sie die Region!</p>
+		<div class="cta-buttons">
+			<a href="/ausfluege/" class="button primary">Ausflugstipps</a>
+			<a href="/buchungen/" class="button secondary">Jetzt buchen</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2.2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+
+	.category-section {
+		margin-bottom: 2.5rem;
+	}
+
+	.restaurant-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1rem;
+	}
+
+	.restaurant-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.25rem;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.restaurant-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+	}
+
+	.restaurant-card.featured {
+		border-left: 4px solid #d69e2e;
+	}
+
+	.restaurant-card.highlight {
+		background: linear-gradient(135deg, #faf5e4 0%, #f5edd6 100%);
+		border: 1px solid #d69e2e;
+	}
+
+	.badge {
+		display: inline-block;
+		background: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+		color: #fff;
+		font-size: 0.7rem;
+		font-weight: 600;
+		padding: 0.25rem 0.6rem;
+		border-radius: 12px;
+		margin-bottom: 0.5rem;
+	}
+
+	.restaurant-card h3 {
+		font-size: 1.1rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.restaurant-card .location {
+		font-size: 0.8rem;
+		color: #888;
+		margin-bottom: 0.5rem;
+	}
+
+	.restaurant-card p {
+		color: #555;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.highlight-section {
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		padding: 1.5rem;
+		border-radius: 12px;
+	}
+
+	.event-card {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+		background: #fff;
+		padding: 1.25rem;
+		border-radius: 10px;
+	}
+
+	.event-icon {
+		font-size: 2.5rem;
+	}
+
+	.event-content h3 {
+		font-size: 1.1rem;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.event-content p {
+		color: #555;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #744210 0%, #5a3510 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #d69e2e;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	.button.secondary:hover {
+		background: rgba(255,255,255,0.25);
+	}
+
+	@media (max-width: 600px) {
+		.event-card {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+</style>

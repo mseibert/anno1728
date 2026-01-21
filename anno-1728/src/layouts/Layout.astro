@@ -19,10 +19,13 @@ const { title = "Anno 1728" } = Astro.props;
 		<header>
 			<div class="header-inner">
 				<div class="logo">
-					<a href="/">
-						<strong>Anno 1728</strong>
+					<a href="/" class="logo-link">
+						<img src="/logo.png" alt="Anno 1728 Logo" class="logo-image" />
+						<span class="logo-text">
+							<strong>Anno 1728</strong>
+							<span class="tagline">Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen</span>
+						</span>
 					</a>
-					<span class="tagline">Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen</span>
 				</div>
 				<nav>
 					<a href="/">Home</a>
@@ -75,18 +78,35 @@ const { title = "Anno 1728" } = Astro.props;
 		padding: 0 1.5rem;
 	}
 
-	.logo a {
+	.logo-link {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
 		text-decoration: none;
 		color: #fff;
+	}
+
+	.logo-image {
+		width: 60px;
+		height: 60px;
+		object-fit: contain;
+		border-radius: 4px;
+	}
+
+	.logo-text {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.logo-text strong {
 		font-size: 2rem;
 		letter-spacing: 0.02em;
 	}
 
 	.tagline {
-		display: block;
 		font-size: 0.95rem;
 		color: rgba(255, 255, 255, 0.85);
-		margin-top: 0.3rem;
+		margin-top: 0.2rem;
 	}
 
 	nav {
@@ -135,8 +155,17 @@ const { title = "Anno 1728" } = Astro.props;
 
 	/* Responsive */
 	@media (max-width: 600px) {
-		.logo a {
+		.logo-image {
+			width: 45px;
+			height: 45px;
+		}
+
+		.logo-text strong {
 			font-size: 1.5rem;
+		}
+
+		.tagline {
+			font-size: 0.8rem;
 		}
 
 		nav a {

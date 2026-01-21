@@ -63,7 +63,7 @@ const { title = "Anno 1728" } = Astro.props;
 
 	/* Header */
 	header {
-		border-bottom: 1px solid #e0e0e0;
+		background: linear-gradient(135deg, #5a4a3a 0%, #3d3428 100%);
 		padding: 1.5rem 0;
 	}
 
@@ -75,15 +75,16 @@ const { title = "Anno 1728" } = Astro.props;
 
 	.logo a {
 		text-decoration: none;
-		color: #333;
-		font-size: 1.8rem;
+		color: #fff;
+		font-size: 2rem;
+		letter-spacing: 0.02em;
 	}
 
 	.tagline {
 		display: block;
-		font-size: 0.9rem;
-		color: #666;
-		margin-top: 0.25rem;
+		font-size: 0.95rem;
+		color: rgba(255, 255, 255, 0.85);
+		margin-top: 0.3rem;
 	}
 
 	nav {
@@ -94,16 +95,17 @@ const { title = "Anno 1728" } = Astro.props;
 	}
 
 	nav a {
-		color: #333;
+		color: rgba(255, 255, 255, 0.9);
 		text-decoration: none;
 		padding: 0.5rem 1rem;
 		border-radius: 3px;
 		font-size: 0.95rem;
+		transition: background 0.2s;
 	}
 
 	nav a:hover {
-		background: #f5f5f5;
-		color: #0066cc;
+		background: rgba(255, 255, 255, 0.15);
+		color: #fff;
 	}
 
 	/* Main */

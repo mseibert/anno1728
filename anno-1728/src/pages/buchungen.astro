@@ -10,6 +10,7 @@ import Layout from '../layouts/Layout.astro';
 
 	<div class="hero-image">
 		<img src="/anno-1728-com-wiesbaden-auringen-141.webp" alt="Anno 1728 Ferienhaus" />
+		<span class="photo-credit">Foto: Horst Goebel</span>
 	</div>
 
 	<section class="pricing-section">
@@ -134,6 +135,7 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 2rem;
 		box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 		max-height: 300px;
+		position: relative;
 	}
 
 	.hero-image img {
@@ -141,6 +143,17 @@ import Layout from '../layouts/Layout.astro';
 		height: 300px;
 		object-fit: cover;
 		display: block;
+	}
+
+	.photo-credit {
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		border-radius: 4px;
 	}
 
 	h2 {

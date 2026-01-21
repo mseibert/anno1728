@@ -11,6 +11,7 @@ import Layout from '../layouts/Layout.astro';
 
 	<div class="hero-image">
 		<img src="/anno-1728-com-wiesbaden-auringen-40.webp" alt="Vorderhaus Anno 1728" />
+		<span class="photo-credit">Foto: Horst Goebel</span>
 	</div>
 
 	<div class="intro-text">
@@ -90,12 +91,24 @@ import Layout from '../layouts/Layout.astro';
 		overflow: hidden;
 		margin-bottom: 2rem;
 		box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+		position: relative;
 	}
 
 	.hero-image img {
 		width: 100%;
 		height: auto;
 		display: block;
+	}
+
+	.photo-credit {
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		border-radius: 4px;
 	}
 
 	.intro-text {

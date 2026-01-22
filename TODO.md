@@ -40,19 +40,19 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 
 Aktuell hat die Seite `/alter-speicher/` nur **ein einziges Bild**. Es werden mehr benötigt!
 
+### Bildquelle
+
+**Smoobu-Listing (für Helene):**
+https://fewoseibert.smoobu.net/en/apartment/AlterSpeicher/909940
+
+→ Bilder dort herunterladen und in `/public/images/alter-speicher/` ablegen
+
 ### Aufgaben
 
-- [ ] **Bilder von Airbnb übernehmen** - Listing suchen und Bilder herunterladen
+- [ ] **Bilder von Smoobu herunterladen** - Siehe Link oben
 - [x] **Bilder optimieren** - WebP-Format, komprimieren
 - [x] **Bildergalerie einbauen** - Wie beim Vorderhaus (Slideshow)
 - [ ] **Alt-Texte schreiben** - Beschreibende Texte für jedes Bild
-
-### Mögliche Bildquellen
-
-1. **Airbnb-Listing** - Falls vorhanden, Bilder von dort holen
-2. **Smoobu** - `https://fewoseibert.smoobu.net/en/` prüfen
-3. **Alte Website** - anno-1728.de Impressionen-Galerie
-4. **Neue Fotos machen** - Falls keine guten Bilder verfügbar
 
 ### Benötigte Motive
 

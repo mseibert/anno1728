@@ -19,20 +19,20 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 
 ## Wichtig (SEO & Qualität)
 
-- [ ] **Sprachumschalter** - DE/EN Toggle im Header
+- [ x] **Sprachumschalter** - DE/EN Toggle im Header
 - [ ] **Social Media Links** - Facebook, Instagram, LinkedIn im Footer
 - [ ] **Meta-Tags hinzufügen** - Description, Open Graph Tags in Layout.astro
 - [ ] **Alt-Texte verbessern** - Beschreibende Texte statt "Anno 1728 Impression"
 - [ ] **Sitemap.xml** - Astro-Plugin `@astrojs/sitemap` verwenden
-- [ ] **Geschichte ergänzen** - Hinweis auf niedrige Deckenbalken (Vorsicht bei >1,75m)
+- [ x] **Geschichte ergänzen** - Hinweis auf niedrige Deckenbalken (Vorsicht bei >1,75m)
 
 ---
 
 ## Essen-Seite korrigieren
 
 - [ x] **Firenze entfernen** - Restaurant existiert nicht mehr
-- [ ] **Milchbar hinzufügen** - Bahnhofstr. 1, 65527 Niedernhausen (Frühstück)
-- [ ] **Restaurant Ente hinzufügen** - Wiesbadener Institution, gehobene Küche
+- [x ] **Milchbar hinzufügen** - Bahnhofstr. 1, 65527 Niedernhausen (Frühstück)
+- [ x] **Restaurant Ente hinzufügen** - Wiesbadener Institution, gehobene Küche
 
 ---
 
@@ -43,8 +43,8 @@ Aktuell hat die Seite `/alter-speicher/` nur **ein einziges Bild**. Es werden me
 ### Aufgaben
 
 - [ ] **Bilder von Airbnb übernehmen** - Listing suchen und Bilder herunterladen
-- [ ] **Bilder optimieren** - WebP-Format, komprimieren
-- [ ] **Bildergalerie einbauen** - Wie beim Vorderhaus (Slideshow)
+- [x ] **Bilder optimieren** - WebP-Format, komprimieren
+- [x ] **Bildergalerie einbauen** - Wie beim Vorderhaus (Slideshow)
 - [ ] **Alt-Texte schreiben** - Beschreibende Texte für jedes Bild
 
 ### Mögliche Bildquellen
@@ -56,12 +56,12 @@ Aktuell hat die Seite `/alter-speicher/` nur **ein einziges Bild**. Es werden me
 
 ### Benötigte Motive
 
-- [ ] Schlafbereich
-- [ ] Küche/Kochnische
-- [ ] Badezimmer
-- [ ] Wohnbereich
-- [ ] Außenansicht/Eingang
-- [ ] Details (Möbel, Dekoration)
+- [ x] Schlafbereich
+- [x ] Küche/Kochnische
+- [ x] Badezimmer
+- [ x] Wohnbereich
+- [ x] Außenansicht/Eingang
+- [ x] Details (Möbel, Dekoration)
 
 ---
 
@@ -106,7 +106,7 @@ src/pages/
 
 ### Zusätzlich benötigt
 
-- [ ] Sprachumschalter im Header
+- [ x] Sprachumschalter im Header
 - [ ] hreflang-Tags für SEO
 - [ ] Layout.astro mit dynamischem `lang` Attribut
 

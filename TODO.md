@@ -14,6 +14,7 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 - [x] **Favicon erstellen** - Eigenes Icon statt Astro-Standard
 - [x] **Impressionen-Seite** - Bildergalerie mit ~25 Fotos von der alten Website
 - [ ] **Kontaktformular mit E-Mail** - Vercel Functions Lernprojekt (siehe Abschnitt unten)
+- [ ] **E-Mail-Adresse auf Website anzeigen** - `info@anno1728-ferienhaus-wiesbaden.de` als Kontaktadresse
 
 ---
 
@@ -241,8 +242,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   // E-Mail versenden
   await resend.emails.send({
-    from: 'Anno 1728 <kontakt@anno-1728.de>',
-    to: 'fewoseibert@seibert-media.net',
+    from: 'Anno 1728 <info@anno1728-ferienhaus-wiesbaden.de>',
+    to: 'info@anno1728-ferienhaus-wiesbaden.de',
     subject: `Neue Anfrage von ${name}`,
     html: `
       <h2>Neue Kontaktanfrage</h2>
@@ -256,6 +257,46 @@ export const POST: APIRoute = async ({ request }) => {
   return new Response(JSON.stringify({ success: true }), { status: 200 });
 };
 ```
+
+---
+
+## E-Mail & Helpdesk Setup
+
+### Kontakt-E-Mail-Adresse
+
+**Offizielle Kontaktadresse:** `info@anno1728-ferienhaus-wiesbaden.de`
+
+Diese Adresse soll:
+- Auf der Website als Kontaktadresse angezeigt werden
+- Als Empfänger für das Kontaktformular dienen
+- Über FreeScout zentral verwaltet werden
+
+### IMAP-Zugangsdaten
+
+**1Password:** [Zugangsdaten für IMAP-Postfach](https://start.1password.com/open/i?a=VHD7TAHZ25EVFM6I3BNF5FRELQ&v=b33jofiftk5uc4kyyfzgdzj5ia&i=pg5dvaqjuie4wtyk3dun473w6a&h=seibert-private.1password.com)
+
+### FreeScout Helpdesk
+
+**Was ist FreeScout?**
+
+FreeScout ist eine Open-Source-Helpdesk-Software (ähnlich wie Help Scout oder Zendesk), mit der E-Mails zentral empfangen und bearbeitet werden können. Mehrere Personen können auf dieselbe Inbox zugreifen, E-Mails zuweisen, beantworten und den Status verfolgen.
+
+**Vorteile:**
+- Zentrale Inbox für alle Anfragen
+- Mehrere Bearbeiter möglich
+- Kollisionserkennung (sehen, wenn jemand anders antwortet)
+- Notizen und interne Kommentare
+- Antwortvorlagen
+- Kostenlos (Self-Hosted)
+
+### Setup-Schritte FreeScout
+
+1. [ ] **Linux Server bereitstellen** - VPS oder eigener Server
+2. [ ] **FreeScout installieren** - https://freescout.net/download/
+3. [ ] **IMAP-Postfach einrichten** - Zugangsdaten aus 1Password
+4. [ ] **Benutzer anlegen** - Wer soll Zugriff haben?
+5. [ ] **Mailbox konfigurieren** - `info@anno1728-ferienhaus-wiesbaden.de` anbinden
+6. [ ] **Testen** - Test-E-Mail senden und empfangen
 
 ---
 

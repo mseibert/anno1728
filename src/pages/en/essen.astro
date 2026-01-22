@@ -1,0 +1,262 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Dining & Restaurants - Anno 1728" lang="en">
+	<div class="page-header">
+		<h1>Dining & Restaurants</h1>
+		<p class="subtitle">Our recommendations around Wiesbaden-Auringen</p>
+	</div>
+
+	<section class="category-section">
+		<h2>Breakfast</h2>
+		<div class="restaurant-grid">
+			<div class="restaurant-card">
+				<h3>Wunderbar</h3>
+				<p class="location">Am Stadtbahnhof 1, 65817 Eppstein</p>
+				<p>Cozy breakfast spot near the main train station.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Regional Cuisine</h2>
+		<div class="restaurant-grid">
+			<div class="restaurant-card featured">
+				<h3>Hinkelhaus</h3>
+				<p class="location">August-Ruf-Straße 44, 65207 Wiesbaden</p>
+				<p>Hearty regional cuisine. Tuesdays feature a popular buffet.</p>
+			</div>
+			<div class="restaurant-card featured">
+				<h3>Hockenberger Mühle</h3>
+				<p>Popular excursion destination with traditional Hessian cuisine, beautiful terrace, and large playground for children.</p>
+			</div>
+			<div class="restaurant-card featured">
+				<h3>Berggasthof Kellerskopf</h3>
+				<p>Regional-Mediterranean cuisine with children's playroom and observation tower with views over the city.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Fine & International Dining</h2>
+		<div class="restaurant-grid">
+			<div class="restaurant-card">
+				<h3>Kaisertempel</h3>
+				<p class="location">Eppstein</p>
+				<p>Italian restaurant with fantastic views over the countryside.</p>
+			</div>
+			<div class="restaurant-card highlight">
+				<span class="badge">Michelin Star</span>
+				<h3>Schellers Restaurant</h3>
+				<p class="location">Philosophenweg, Bad Homburg</p>
+				<p>Fine dining restaurant with Michelin star.</p>
+			</div>
+			<div class="restaurant-card">
+				<h3>Thai Chili</h3>
+				<p class="location">Niedernhausen</p>
+				<p>Authentic Thai cuisine. Limited seating – reservations recommended!</p>
+			</div>
+			<div class="restaurant-card">
+				<h3>Firenze</h3>
+				<p class="location">Niedernhausen</p>
+				<p>An institution! High-quality Italian cuisine with large terrace in summer.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section highlight-section">
+		<h2>Seasonal Events</h2>
+		<div class="event-card">
+			<span class="event-icon">🍷</span>
+			<div class="event-content">
+				<h3>Auringer Vereinssommer</h3>
+				<p>In summer, there are wine stands on Friday evenings with regional winemakers and changing culinary offerings from local clubs.</p>
+			</div>
+		</div>
+	</section>
+
+	<div class="cta-box">
+		<p>Discover the region!</p>
+		<div class="cta-buttons">
+			<a href="/en/ausfluege/" class="button primary">Excursion tips</a>
+			<a href="/en/buchungen/" class="button secondary">Book now</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2.2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+
+	.category-section {
+		margin-bottom: 2.5rem;
+	}
+
+	.restaurant-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1rem;
+	}
+
+	.restaurant-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.25rem;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.restaurant-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+	}
+
+	.restaurant-card.featured {
+		border-left: 4px solid #8B2332;
+	}
+
+	.restaurant-card.highlight {
+		background: linear-gradient(135deg, #faf5e4 0%, #f5edd6 100%);
+		border: 1px solid #8B2332;
+	}
+
+	.badge {
+		display: inline-block;
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		font-size: 0.7rem;
+		font-weight: 600;
+		padding: 0.25rem 0.6rem;
+		border-radius: 12px;
+		margin-bottom: 0.5rem;
+	}
+
+	.restaurant-card h3 {
+		font-size: 1.1rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.restaurant-card .location {
+		font-size: 0.8rem;
+		color: #888;
+		margin-bottom: 0.5rem;
+	}
+
+	.restaurant-card p {
+		color: #555;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.highlight-section {
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		padding: 1.5rem;
+		border-radius: 12px;
+	}
+
+	.event-card {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+		background: #fff;
+		padding: 1.25rem;
+		border-radius: 10px;
+	}
+
+	.event-icon {
+		font-size: 2.5rem;
+	}
+
+	.event-content h3 {
+		font-size: 1.1rem;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.event-content p {
+		color: #555;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #8B2332;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	.button.secondary:hover {
+		background: rgba(255,255,255,0.25);
+	}
+
+	@media (max-width: 600px) {
+		.event-card {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+</style>

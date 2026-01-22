@@ -1,40 +1,85 @@
 ---
 interface Props {
 	title?: string;
+	lang?: 'de' | 'en';
 }
 
-const { title = "Anno 1728" } = Astro.props;
+const { title = "Anno 1728", lang = 'de' } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const isEnglish = lang === 'en';
+
+// Generate the path for the other language
+const getOtherLangPath = () => {
+	if (isEnglish) {
+		// Remove /en/ prefix to get German version
+		return currentPath.replace(/^\/en/, '') || '/';
+	} else {
+		// Add /en/ prefix to get English version
+		return '/en' + (currentPath === '/' ? '/' : currentPath);
+	}
+};
+
+const otherLangPath = getOtherLangPath();
+
+// Navigation labels
+const nav = isEnglish ? {
+	home: 'Home',
+	vorderhaus: 'Main House',
+	alterSpeicher: 'Old Granary',
+	geschichte: 'History',
+	ausfluege: 'Excursions',
+	essen: 'Dining',
+	buchungen: 'Bookings'
+} : {
+	home: 'Home',
+	vorderhaus: 'Vorderhaus',
+	alterSpeicher: 'Alter Speicher',
+	geschichte: 'Geschichte',
+	ausfluege: 'Ausflüge',
+	essen: 'Essen',
+	buchungen: 'Buchungen'
+};
+
+const basePath = isEnglish ? '/en' : '';
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<header>
 			<div class="header-inner">
-				<div class="logo">
-					<a href="/" class="logo-link">
-						<img src="/logo.png" alt="Anno 1728 Logo" class="logo-image" />
-						<span class="logo-text">
-							<strong>Anno 1728</strong>
-							<span class="tagline">Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen</span>
-						</span>
-					</a>
+				<div class="header-top">
+					<div class="logo">
+						<a href={basePath + '/'} class="logo-link">
+							<img src="/logo.png" alt="Anno 1728 Logo" class="logo-image" />
+							<span class="logo-text">
+								<strong>Anno 1728</strong>
+								<span class="tagline">{isEnglish ? 'Historic vacation home in Wiesbaden-Auringen' : 'Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen'}</span>
+							</span>
+						</a>
+					</div>
+					<div class="lang-switcher">
+						<a href={otherLangPath} class="lang-btn" title={isEnglish ? 'Deutsch' : 'English'}>
+							{isEnglish ? 'DE' : 'EN'}
+						</a>
+					</div>
 				</div>
 				<nav>
-					<a href="/">Home</a>
-					<a href="/vorderhaus/">Vorderhaus</a>
-					<a href="/alter-speicher/">Alter Speicher</a>
-					<a href="/geschichte/">Geschichte</a>
-					<a href="/ausfluege/">Ausflüge</a>
-					<a href="/essen/">Essen</a>
-					<a href="/buchungen/">Buchungen</a>
+					<a href={basePath + '/'}>{nav.home}</a>
+					<a href={basePath + '/vorderhaus/'}>{nav.vorderhaus}</a>
+					<a href={basePath + '/alter-speicher/'}>{nav.alterSpeicher}</a>
+					<a href={basePath + '/geschichte/'}>{nav.geschichte}</a>
+					<a href={basePath + '/ausfluege/'}>{nav.ausfluege}</a>
+					<a href={basePath + '/essen/'}>{nav.essen}</a>
+					<a href={basePath + '/buchungen/'}>{nav.buchungen}</a>
 				</nav>
 			</div>
 		</header>
@@ -42,8 +87,11 @@ const { title = "Anno 1728" } = Astro.props;
 			<slot />
 		</main>
 		<footer>
-			<p>Anno 1728 · Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen</p>
+			<p>Anno 1728 · {isEnglish ? 'Historic vacation home in Wiesbaden-Auringen' : 'Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen'}</p>
 			<p>Familie Seibert · Tel: +49 160 6044181 · fewoseibert@seibert-media.net</p>
+			<p class="legal-links">
+				<a href={basePath + '/impressum/'}>{isEnglish ? 'Legal Notice' : 'Impressum'}</a> · <a href={basePath + '/datenschutz/'}>{isEnglish ? 'Privacy Policy' : 'Datenschutz'}</a>
+			</p>
 		</footer>
 	</body>
 </html>
@@ -76,6 +124,32 @@ const { title = "Anno 1728" } = Astro.props;
 		max-width: 900px;
 		margin: 0 auto;
 		padding: 0 1.5rem;
+	}
+
+	.header-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.lang-switcher {
+		flex-shrink: 0;
+	}
+
+	.lang-btn {
+		display: inline-block;
+		background: rgba(255, 255, 255, 0.2);
+		color: #fff;
+		padding: 0.4rem 0.8rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-size: 0.85rem;
+		font-weight: 600;
+		transition: background 0.2s;
+	}
+
+	.lang-btn:hover {
+		background: rgba(255, 255, 255, 0.35);
 	}
 
 	.logo-link {
@@ -151,6 +225,19 @@ const { title = "Anno 1728" } = Astro.props;
 
 	footer p {
 		margin-bottom: 0.25rem;
+	}
+
+	.legal-links {
+		margin-top: 0.75rem;
+	}
+
+	.legal-links a {
+		color: #8B2332;
+		text-decoration: none;
+	}
+
+	.legal-links a:hover {
+		text-decoration: underline;
 	}
 
 	/* Responsive */

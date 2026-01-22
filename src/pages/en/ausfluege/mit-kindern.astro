@@ -1,0 +1,355 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Wiesbaden with Children - Anno 1728" lang="en">
+	<div class="page-header">
+		<h1>Wiesbaden with Children</h1>
+		<p class="subtitle">Fun for the whole family</p>
+	</div>
+
+	<section class="category-section">
+		<h2>Top Attractions</h2>
+		<div class="attractions-grid">
+			<div class="attraction-card featured">
+				<span class="attraction-icon">🚋</span>
+				<h3>Neroberg Railway & Neroberg</h3>
+				<p>The water-powered funicular railway delights children and adults alike.</p>
+			</div>
+			<div class="attraction-card featured">
+				<span class="attraction-icon">🦌</span>
+				<h3>Fasanerie</h3>
+				<p>Animal and plant park with large playground – highly recommended!</p>
+				<span class="badge">Highlight</span>
+			</div>
+			<div class="attraction-card featured">
+				<span class="attraction-icon">🏰</span>
+				<h3>Schloss Freudenberg</h3>
+				<p>Interactive experience field for the senses – an unforgettable experience!</p>
+				<span class="badge">Highlight</span>
+			</div>
+			<div class="attraction-card">
+				<span class="attraction-icon">🎨</span>
+				<h3>Museum Wiesbaden</h3>
+				<p>Art and natural history collections with offerings for children.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Near the Vacation Home</h2>
+		<div class="nearby-list">
+			<div class="nearby-item">
+				<span class="nearby-icon">🛝</span>
+				<div>
+					<h4>Auringen Playground</h4>
+					<p>Renovated in 2015, within walking distance</p>
+				</div>
+			</div>
+			<div class="nearby-item">
+				<span class="nearby-icon">🏡</span>
+				<div>
+					<h4>Hockenberger Mühle</h4>
+					<p>Restaurant with large play area for children</p>
+				</div>
+			</div>
+			<div class="nearby-item">
+				<span class="nearby-icon">🌳</span>
+				<div>
+					<h4>Spielpark Hochheim</h4>
+					<p>Nature-oriented, non-commercial playground – ideal in good weather</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Restaurants with Children's Areas</h2>
+		<div class="restaurants-grid">
+			<div class="restaurant-item">
+				<h4>Berggasthof Kellerskopf</h4>
+				<p>Dedicated children's playroom</p>
+			</div>
+			<div class="restaurant-item highlight">
+				<h4>Kastanienhof</h4>
+				<p>Large indoor play area with slides</p>
+			</div>
+			<div class="restaurant-item">
+				<h4>Weinhaus Sinz</h4>
+				<p>Traditional cuisine, child-friendly</p>
+			</div>
+			<div class="restaurant-item">
+				<h4>Alex, Extrablatt, Okinii</h4>
+				<p>Family-friendly restaurants in the city center</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Swimming Pools</h2>
+		<div class="pools-grid">
+			<div class="pool-tag">Opelbad</div>
+			<div class="pool-tag">Thermalbad Aukammtal</div>
+			<div class="pool-tag">Waldschwimmbad Niedernhausen</div>
+			<div class="pool-tag">Freizeitbad Mainzer Straße</div>
+			<div class="pool-tag">Freibad Kallebad</div>
+			<div class="pool-tag">Tournesol</div>
+			<div class="pool-tag">Rebstockbad</div>
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>Indoor Playgrounds</h2>
+		<div class="indoor-info">
+			<p>In bad weather, there are numerous indoor playgrounds in the region:</p>
+			<div class="indoor-tags">
+				<span>Halli Galli</span>
+				<span>Knirpshausen</span>
+				<span>Rambazamba</span>
+				<span>Tiggolino</span>
+				<span>Superfly</span>
+			</div>
+		</div>
+	</section>
+
+	<div class="cta-box">
+		<p>Discover more excursion tips</p>
+		<div class="cta-buttons">
+			<a href="/en/ausfluege/" class="button primary">All tours</a>
+			<a href="/en/essen/" class="button secondary">Restaurant tips</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2.2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	h2 {
+		font-size: 1.3rem;
+		color: #333;
+		margin-bottom: 1rem;
+	}
+
+	.category-section {
+		margin-bottom: 2.5rem;
+	}
+
+	.attractions-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1rem;
+	}
+
+	.attraction-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.25rem;
+		text-align: center;
+		transition: transform 0.2s, box-shadow 0.2s;
+		position: relative;
+	}
+
+	.attraction-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+	}
+
+	.attraction-card.featured {
+		border-color: #8B2332;
+		background: linear-gradient(135deg, #f0fff4 0%, #fff 100%);
+	}
+
+	.attraction-icon {
+		font-size: 2.5rem;
+		display: block;
+		margin-bottom: 0.75rem;
+	}
+
+	.attraction-card h3 {
+		font-size: 1.05rem;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.attraction-card p {
+		font-size: 0.85rem;
+		color: #555;
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	.badge {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: #8B2332;
+		color: #fff;
+		font-size: 0.65rem;
+		font-weight: 600;
+		padding: 0.2rem 0.5rem;
+		border-radius: 10px;
+	}
+
+	.nearby-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.nearby-item {
+		display: flex;
+		gap: 1rem;
+		padding: 1rem;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+	}
+
+	.nearby-icon {
+		font-size: 1.5rem;
+		width: 40px;
+		text-align: center;
+	}
+
+	.nearby-item h4 {
+		font-size: 1rem;
+		color: #333;
+		margin-bottom: 0.2rem;
+	}
+
+	.nearby-item p {
+		color: #666;
+		font-size: 0.85rem;
+		margin: 0;
+	}
+
+	.restaurants-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.75rem;
+	}
+
+	.restaurant-item {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		padding: 1rem;
+	}
+
+	.restaurant-item.highlight {
+		background: #faf5e4;
+		border-color: #C9B896;
+	}
+
+	.restaurant-item h4 {
+		font-size: 0.95rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.restaurant-item p {
+		font-size: 0.8rem;
+		color: #666;
+		margin: 0;
+	}
+
+	.pools-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.pool-tag {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.85rem;
+	}
+
+	.indoor-info {
+		background: #f8f9fa;
+		padding: 1.25rem;
+		border-radius: 10px;
+	}
+
+	.indoor-info p {
+		margin-bottom: 0.75rem;
+		color: #555;
+		font-size: 0.95rem;
+	}
+
+	.indoor-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.indoor-tags span {
+		background: #e9ecef;
+		color: #333;
+		padding: 0.4rem 0.8rem;
+		border-radius: 15px;
+		font-size: 0.85rem;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #fff;
+		color: #6B1A26;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+</style>

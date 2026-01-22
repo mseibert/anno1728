@@ -1,0 +1,322 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Weekend in the Rheingau - Anno 1728" lang="en">
+	<div class="page-header">
+		<h1>A Weekend in Wiesbaden and the Rheingau</h1>
+		<p class="subtitle">Two days full of culture, wine, and unforgettable views</p>
+	</div>
+
+	<section class="day-section">
+		<div class="day-header">
+			<span class="day-badge">Day 1</span>
+			<h2>Wiesbaden Without a Car</h2>
+		</div>
+
+		<div class="day-intro">
+			<p>Start relaxed with <strong>bus line 21</strong> – a stress-free 20-minute ride to the city center.</p>
+		</div>
+
+		<div class="stops-list">
+			<div class="stop-item">
+				<span class="stop-icon">🏛️</span>
+				<div>
+					<h4>Town Hall & State Parliament</h4>
+					<p>Miniature model in the Town Hall, Hessian State Parliament across the street</p>
+				</div>
+			</div>
+			<div class="stop-item">
+				<span class="stop-icon">⛪</span>
+				<div>
+					<h4>Market Church</h4>
+					<p>Wiesbaden's neo-Gothic landmark</p>
+				</div>
+			</div>
+			<div class="stop-item highlight">
+				<span class="stop-icon">☕</span>
+				<div>
+					<h4>Breakfast</h4>
+					<p><strong>Café Maldaner</strong> (reservations!) or <strong>Aurum</strong> in good weather</p>
+				</div>
+			</div>
+			<div class="stop-item">
+				<span class="stop-icon">🚋</span>
+				<div>
+					<h4>Neroberg Railway & Neroberg</h4>
+					<p>Water-powered funicular, views, Opelbad</p>
+				</div>
+			</div>
+			<div class="stop-item">
+				<span class="stop-icon">🎰</span>
+				<div>
+					<h4>Kurhaus & Casino</h4>
+					<p>Magnificent architecture, dinner at Käfer's or Ente</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="day-section">
+		<div class="day-header">
+			<span class="day-badge">Day 2</span>
+			<h2>Rheingau Wine Region</h2>
+		</div>
+
+		<div class="day-intro">
+			<p>Today you explore the world-famous wine region – <strong>a car is recommended</strong>.</p>
+		</div>
+
+		<div class="stops-list">
+			<div class="stop-item highlight">
+				<span class="stop-icon">☕</span>
+				<div>
+					<h4>Geisenheim – Breakfast</h4>
+					<p><strong>Café am Dom</strong>, then explore the historic old town with the 700-year-old linden tree</p>
+				</div>
+			</div>
+			<div class="stop-item featured">
+				<span class="stop-icon">🚡</span>
+				<div>
+					<h4>Rüdesheim & Niederwald Monument</h4>
+					<p>Cable car to the Germania statue, hike towards Assmannshausen, return by cable car and boat</p>
+				</div>
+			</div>
+			<div class="stop-item featured">
+				<span class="stop-icon">🍷</span>
+				<div>
+					<h4>Johannisberg Castle</h4>
+					<p>The world's oldest Riesling winery – wine tasting with views over the Rhine Valley</p>
+				</div>
+			</div>
+			<div class="stop-item">
+				<span class="stop-icon">🍽️</span>
+				<div>
+					<h4>Oestrich-Winkel</h4>
+					<p>Wine tasting and excellent Rheingau cuisine at <strong>Weingut Hamm</strong></p>
+				</div>
+			</div>
+			<div class="stop-item">
+				<span class="stop-icon">🏰</span>
+				<div>
+					<h4>Eltville (optional)</h4>
+					<p>Evening stroll at the Electoral Castle</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="highlights-box">
+		<h3>Highlights of this Tour</h3>
+		<div class="highlights-grid">
+			<div class="highlight-item">
+				<span>🏛️</span>
+				<span>Wiesbaden Old Town</span>
+			</div>
+			<div class="highlight-item">
+				<span>🍷</span>
+				<span>Rheingau Wines</span>
+			</div>
+			<div class="highlight-item">
+				<span>🗽</span>
+				<span>Germania Monument</span>
+			</div>
+			<div class="highlight-item">
+				<span>🚢</span>
+				<span>Rhine River Cruise</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="cta-box">
+		<p>Discover more excursion tips</p>
+		<div class="cta-buttons">
+			<a href="/en/ausfluege/" class="button primary">All tours</a>
+			<a href="/en/ausfluege/mit-kindern/" class="button secondary">Wiesbaden with Children</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 1.9rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.day-section {
+		margin-bottom: 2.5rem;
+	}
+
+	.day-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.day-badge {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		font-size: 0.85rem;
+		font-weight: 600;
+		padding: 0.4rem 1rem;
+		border-radius: 20px;
+	}
+
+	.day-header h2 {
+		font-size: 1.3rem;
+		color: #333;
+		margin: 0;
+	}
+
+	.day-intro {
+		background: #f8f9fa;
+		padding: 1rem 1.25rem;
+		border-radius: 8px;
+		margin-bottom: 1rem;
+	}
+
+	.day-intro p {
+		margin: 0;
+		color: #555;
+		font-size: 0.95rem;
+	}
+
+	.stops-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.stop-item {
+		display: flex;
+		gap: 1rem;
+		padding: 1rem;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+	}
+
+	.stop-item.highlight {
+		background: linear-gradient(135deg, #faf5e4 0%, #f5edd6 100%);
+		border-color: #C9B896;
+	}
+
+	.stop-item.featured {
+		background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+		border-color: #8B2332;
+	}
+
+	.stop-icon {
+		font-size: 1.5rem;
+		width: 40px;
+		text-align: center;
+		flex-shrink: 0;
+	}
+
+	.stop-item h4 {
+		font-size: 1rem;
+		color: #333;
+		margin-bottom: 0.2rem;
+	}
+
+	.stop-item p {
+		color: #555;
+		font-size: 0.85rem;
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	.highlights-box {
+		background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+		color: #fff;
+		padding: 1.5rem;
+		border-radius: 12px;
+		margin-bottom: 2rem;
+	}
+
+	.highlights-box h3 {
+		text-align: center;
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+	}
+
+	.highlights-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: 0.75rem;
+	}
+
+	.highlight-item {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: rgba(255,255,255,0.1);
+		padding: 0.6rem 1rem;
+		border-radius: 6px;
+		font-size: 0.9rem;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #A64D5A;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	@media (max-width: 600px) {
+		.day-header {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+</style>

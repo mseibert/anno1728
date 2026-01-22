@@ -1,0 +1,496 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Bookings - Anno 1728" lang="en">
+	<div class="page-header">
+		<h1>Bookings</h1>
+		<p class="subtitle">Reserve your stay in the historic half-timbered house</p>
+	</div>
+
+	<div class="hero-image">
+		<img src="/anno-1728-com-wiesbaden-auringen-141.webp" alt="Anno 1728 Vacation Home" />
+		<span class="photo-credit">Photo: Horst Goebel</span>
+	</div>
+
+	<div class="booking-cta">
+		<h2>Book online now</h2>
+		<p>Check availability and book your stay directly</p>
+		<a href="https://fewoseibert.smoobu.net/en/" target="_blank" rel="noopener" class="booking-button">
+			Request booking
+		</a>
+	</div>
+
+	<section class="pricing-section">
+		<h2>Prices</h2>
+		<div class="price-cards">
+			<div class="price-card">
+				<span class="price-icon">📅</span>
+				<span class="price">95 €</span>
+				<span class="label">per night</span>
+				<span class="detail">Sunday – Thursday</span>
+			</div>
+			<div class="price-card">
+				<span class="price-icon">🌟</span>
+				<span class="price">115 €</span>
+				<span class="label">per night</span>
+				<span class="detail">Friday & Saturday</span>
+			</div>
+		</div>
+
+		<div class="extras-box">
+			<h3>Additional Costs</h3>
+			<div class="extras-grid">
+				<div class="extra-item">
+					<span class="extra-label">Christmas & New Year</span>
+					<span class="extra-value">+30 € / night</span>
+				</div>
+				<div class="extra-item">
+					<span class="extra-label">From the 3rd guest</span>
+					<span class="extra-value">+15 € / night</span>
+				</div>
+				<div class="extra-item">
+					<span class="extra-label">Children under 2 years</span>
+					<span class="extra-value">free</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="discount-banner">
+			<span class="discount-tag">5% DISCOUNT</span>
+			<span>For direct booking with code <strong>"direct"</strong></span>
+		</div>
+	</section>
+
+	<section class="conditions-section">
+		<h2>Terms</h2>
+		<div class="conditions-grid">
+			<div class="condition-card">
+				<span class="condition-icon">🗓️</span>
+				<h3>Minimum Stay</h3>
+				<p>2 nights</p>
+			</div>
+			<div class="condition-card">
+				<span class="condition-icon">🧹</span>
+				<h3>Cleaning Fee</h3>
+				<p>60 € (one-time)</p>
+			</div>
+			<div class="condition-card">
+				<span class="condition-icon">📆</span>
+				<h3>Weekly Discount</h3>
+				<p>6%</p>
+			</div>
+			<div class="condition-card">
+				<span class="condition-icon">📅</span>
+				<h3>Monthly Discount</h3>
+				<p>14%</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="payment-section">
+		<h2>Payment & Cancellation</h2>
+		<div class="payment-cards">
+			<div class="payment-card">
+				<span class="payment-icon">💳</span>
+				<div class="payment-content">
+					<h3>Payment</h3>
+					<p>30 days before arrival or immediately</p>
+					<span class="payment-methods">Credit Card · Bank Transfer · PayPal</span>
+				</div>
+			</div>
+			<div class="payment-card">
+				<span class="payment-icon">↩️</span>
+				<div class="payment-content">
+					<h3>Cancellation</h3>
+					<p>50% refund up to one week before arrival</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="cta-box">
+		<h2>Contact & Booking</h2>
+		<p class="contact-name">Familie Seibert</p>
+		<p class="contact-subtitle">Your hosts on site · Manager: Isabelle Meyer</p>
+		<div class="cta-buttons">
+			<a href="tel:+491606044181" class="button primary">📞 +49 160 6044181</a>
+			<a href="mailto:fewoseibert@seibert-media.net" class="button secondary">✉️ Send email</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2.2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.hero-image {
+		border-radius: 12px;
+		overflow: hidden;
+		margin-bottom: 2rem;
+		box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+		max-height: 300px;
+		position: relative;
+	}
+
+	.hero-image img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		display: block;
+	}
+
+	.photo-credit {
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		border-radius: 4px;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+
+	section {
+		margin-bottom: 2rem;
+	}
+
+	/* Price Cards */
+	.price-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.price-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.5rem;
+		text-align: center;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.price-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+	}
+
+	.price-icon {
+		font-size: 1.5rem;
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+
+	.price-card .price {
+		display: block;
+		font-size: 2.5rem;
+		font-weight: bold;
+		color: #333;
+		line-height: 1;
+	}
+
+	.price-card .label {
+		display: block;
+		font-size: 0.9rem;
+		color: #666;
+		margin-top: 0.25rem;
+	}
+
+	.price-card .detail {
+		display: block;
+		font-size: 0.85rem;
+		color: #888;
+		margin-top: 0.5rem;
+	}
+
+	/* Extras */
+	.extras-box {
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		padding: 1.25rem;
+		border-radius: 10px;
+		margin-bottom: 1rem;
+	}
+
+	.extras-box h3 {
+		font-size: 1rem;
+		color: #333;
+		margin-bottom: 0.75rem;
+		text-align: center;
+	}
+
+	.extras-grid {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.extra-item {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.extra-item:last-child {
+		border-bottom: none;
+	}
+
+	.extra-label {
+		color: #555;
+		font-size: 0.9rem;
+	}
+
+	.extra-value {
+		font-weight: 600;
+		color: #333;
+		font-size: 0.9rem;
+	}
+
+	/* Discount */
+	.discount-banner {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 1rem 1.25rem;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.discount-tag {
+		background: #fff;
+		color: #6B1A26;
+		font-size: 0.75rem;
+		font-weight: bold;
+		padding: 0.3rem 0.6rem;
+		border-radius: 4px;
+	}
+
+	/* Conditions */
+	.conditions-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 1rem;
+	}
+
+	.condition-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.25rem;
+		text-align: center;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.condition-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+	}
+
+	.condition-icon {
+		font-size: 1.5rem;
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+
+	.condition-card h3 {
+		font-size: 0.85rem;
+		color: #666;
+		margin-bottom: 0.25rem;
+		font-weight: normal;
+	}
+
+	.condition-card p {
+		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #333;
+	}
+
+	/* Payment */
+	.payment-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1rem;
+	}
+
+	.payment-card {
+		display: flex;
+		gap: 1rem;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		padding: 1.25rem;
+		transition: box-shadow 0.2s;
+	}
+
+	.payment-card:hover {
+		box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	}
+
+	.payment-icon {
+		font-size: 1.5rem;
+		width: 40px;
+		height: 40px;
+		background: #f8f9fa;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.payment-content h3 {
+		font-size: 1rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.payment-content p {
+		margin: 0;
+		color: #555;
+		font-size: 0.9rem;
+	}
+
+	.payment-methods {
+		display: block;
+		font-size: 0.8rem;
+		color: #888;
+		margin-top: 0.25rem;
+	}
+
+	/* CTA Box */
+	.cta-box {
+		background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.cta-box h2 {
+		color: #fff;
+		margin-bottom: 0.5rem;
+	}
+
+	.contact-name {
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-bottom: 0.25rem;
+	}
+
+	.contact-subtitle {
+		font-size: 0.9rem;
+		opacity: 0.8;
+		margin-bottom: 1.5rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #8B2332;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	.button.secondary:hover {
+		background: rgba(255,255,255,0.25);
+	}
+
+	/* Booking CTA */
+	.booking-cta {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+		margin-bottom: 2rem;
+		box-shadow: 0 8px 30px rgba(139, 35, 50, 0.3);
+	}
+
+	.booking-cta h2 {
+		color: #fff;
+		margin-bottom: 0.5rem;
+		font-size: 1.6rem;
+	}
+
+	.booking-cta p {
+		opacity: 0.9;
+		margin-bottom: 1.5rem;
+		font-size: 1rem;
+	}
+
+	.booking-button {
+		display: inline-block;
+		background: #fff;
+		color: #8B2332;
+		padding: 1rem 2.5rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 1.1rem;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.booking-button:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+	}
+
+	@media (max-width: 600px) {
+		.price-cards {
+			grid-template-columns: 1fr;
+		}
+
+		.discount-banner {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+</style>

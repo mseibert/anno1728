@@ -1,0 +1,272 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="History - Anno 1728" lang="en">
+	<div class="page-header">
+		<h1>History of the House</h1>
+		<p class="subtitle">Nearly 300 years of architectural history to experience</p>
+	</div>
+
+	<div class="intro-box">
+		<p>
+			The vacation home is a heritage-protected half-timbered house in Wiesbaden-Auringen,
+			built around <strong>1728</strong>. When acquired, it was a ruin on the verge of collapse,
+			but was elaborately <strong>restored rather than merely renovated</strong>.
+		</p>
+	</div>
+
+	<section class="details-section">
+		<h2>Architectural Features</h2>
+
+		<div class="detail-card">
+			<div class="detail-icon">🏛️</div>
+			<div class="detail-content">
+				<h3>Architecture</h3>
+				<p>
+					The house is crooked and tilted. Especially on the first floor, you may experience
+					a feeling of "sea motion." This is intentional and typical of the Baroque period.
+				</p>
+			</div>
+		</div>
+
+		<div class="detail-card">
+			<div class="detail-icon">🪜</div>
+			<div class="detail-content">
+				<h3>The Staircase</h3>
+				<p>
+					The staircase resembles a fixed ladder more than a modern staircase with flat steps.
+					Historically, people descended the staircase backwards, which is why the steps are "foot-deep" –
+					this direction of movement is recommended.
+				</p>
+			</div>
+		</div>
+
+		<div class="detail-card">
+			<div class="detail-icon">🪵</div>
+			<div class="detail-content">
+				<h3>Wooden Floors</h3>
+				<div class="floor-info">
+					<div class="floor-item">
+						<span class="floor-label">Living Room</span>
+						<span class="floor-value">Floorboards from the 1920s</span>
+					</div>
+					<div class="floor-item">
+						<span class="floor-label">Staircase & 1st Floor</span>
+						<span class="floor-value">Original from ca. 1728</span>
+					</div>
+				</div>
+				<p class="floor-note">All floors were elaborately restored, supplemented, and oiled.</p>
+			</div>
+		</div>
+
+		<div class="detail-card">
+			<div class="detail-icon">🪟</div>
+			<div class="detail-content">
+				<h3>Windows</h3>
+				<p>
+					The oldest window in the first-floor hallway is older than the house itself –
+					already in 1728, used windows were recycled. The new windows were crafted
+					after historical models with single glazing made of "antique glass."
+				</p>
+			</div>
+		</div>
+
+		<div class="detail-card">
+			<div class="detail-icon">🎨</div>
+			<div class="detail-content">
+				<h3>Ceiling (Living Room)</h3>
+				<p>
+					The restoration was supported by the Hessian State Heritage Office.
+					Original colored border strips were uncovered and preserved.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<div class="cta-box">
+		<p>Experience history for yourself!</p>
+		<div class="cta-buttons">
+			<a href="/en/vorderhaus/" class="button primary">To the Main House</a>
+			<a href="/en/buchungen/" class="button secondary">Book now</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2.2rem;
+		color: #333;
+		margin-bottom: 0.25rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.intro-box {
+		background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+		color: #fff;
+		padding: 1.5rem 2rem;
+		border-radius: 12px;
+		margin-bottom: 2rem;
+	}
+
+	.intro-box p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.details-section {
+		margin-bottom: 2rem;
+	}
+
+	.detail-card {
+		display: flex;
+		gap: 1.25rem;
+		padding: 1.25rem;
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 10px;
+		margin-bottom: 1rem;
+		transition: box-shadow 0.2s;
+	}
+
+	.detail-card:hover {
+		box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	}
+
+	.detail-icon {
+		font-size: 2rem;
+		width: 50px;
+		height: 50px;
+		background: #f8f9fa;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.detail-content h3 {
+		font-size: 1.1rem;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.detail-content p {
+		margin: 0;
+		color: #555;
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.floor-info {
+		background: #f8f9fa;
+		border-radius: 8px;
+		overflow: hidden;
+		margin-bottom: 0.75rem;
+	}
+
+	.floor-item {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.6rem 1rem;
+		border-bottom: 1px solid #e9ecef;
+	}
+
+	.floor-item:last-child {
+		border-bottom: none;
+	}
+
+	.floor-label {
+		color: #666;
+		font-size: 0.9rem;
+	}
+
+	.floor-value {
+		color: #333;
+		font-weight: 500;
+		font-size: 0.9rem;
+	}
+
+	.floor-note {
+		font-size: 0.85rem;
+		color: #888;
+		font-style: italic;
+	}
+
+	.cta-box {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.cta-box p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: transform 0.2s;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button.primary {
+		background: #8B2332;
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.3);
+	}
+
+	.button.secondary:hover {
+		background: rgba(255,255,255,0.25);
+	}
+
+	@media (max-width: 600px) {
+		.detail-card {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.detail-icon {
+			margin: 0 auto;
+		}
+	}
+</style>

@@ -6,33 +6,33 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 
 ## Dringend (Funktionalität/Rechtliches)
 
-- [x ] **Smoobu-Buchungslink einbauen** - `https://fewoseibert.smoobu.net/en/` auf Buchungsseite und CTA-Buttons
-- [ x] **Impressum erstellen** - Pflicht für deutsche Websites (Name, Adresse, Kontakt, ggf. Steuernummer)
-- [ x] **Datenschutz erstellen** - Pflicht nach DSGVO
-- [x ] **Englische Version** - Alle Seiten auf Englisch übersetzen (siehe Abschnitt unten)
+- [x] **Smoobu-Buchungslink einbauen** - `https://fewoseibert.smoobu.net/en/` auf Buchungsseite und CTA-Buttons
+- [x] **Impressum erstellen** - Pflicht für deutsche Websites (Name, Adresse, Kontakt, ggf. Steuernummer)
+- [x] **Datenschutz erstellen** - Pflicht nach DSGVO
+- [x] **Englische Version** - Alle Seiten auf Englisch übersetzen (siehe Abschnitt unten)
 - [ ] **12 Blog-Artikel migrieren** - Von anno-1728.de übernehmen (siehe Abschnitt unten)
-- [x ] **Favicon erstellen** - Eigenes Icon statt Astro-Standard
-- [x ] **Impressionen-Seite** - Bildergalerie mit ~25 Fotos von der alten Website
+- [x] **Favicon erstellen** - Eigenes Icon statt Astro-Standard
+- [x] **Impressionen-Seite** - Bildergalerie mit ~25 Fotos von der alten Website
 - [ ] **Kontaktformular mit E-Mail** - Vercel Functions Lernprojekt (siehe Abschnitt unten)
 
 ---
 
 ## Wichtig (SEO & Qualität)
 
-- [ x] **Sprachumschalter** - DE/EN Toggle im Header
+- [x] **Sprachumschalter** - DE/EN Toggle im Header
 - [ ] **Social Media Links** - Facebook, Instagram, LinkedIn im Footer
 - [ ] **Meta-Tags hinzufügen** - Description, Open Graph Tags in Layout.astro
 - [ ] **Alt-Texte verbessern** - Beschreibende Texte statt "Anno 1728 Impression"
 - [ ] **Sitemap.xml** - Astro-Plugin `@astrojs/sitemap` verwenden
-- [ x] **Geschichte ergänzen** - Hinweis auf niedrige Deckenbalken (Vorsicht bei >1,75m)
+- [x] **Geschichte ergänzen** - Hinweis auf niedrige Deckenbalken (Vorsicht bei >1,75m)
 
 ---
 
 ## Essen-Seite korrigieren
 
-- [ x] **Firenze entfernen** - Restaurant existiert nicht mehr
-- [x ] **Milchbar hinzufügen** - Bahnhofstr. 1, 65527 Niedernhausen (Frühstück)
-- [ x] **Restaurant Ente hinzufügen** - Wiesbadener Institution, gehobene Küche
+- [x] **Firenze entfernen** - Restaurant existiert nicht mehr
+- [x] **Milchbar hinzufügen** - Bahnhofstr. 1, 65527 Niedernhausen (Frühstück)
+- [x] **Restaurant Ente hinzufügen** - Wiesbadener Institution, gehobene Küche
 
 ---
 
@@ -43,8 +43,8 @@ Aktuell hat die Seite `/alter-speicher/` nur **ein einziges Bild**. Es werden me
 ### Aufgaben
 
 - [ ] **Bilder von Airbnb übernehmen** - Listing suchen und Bilder herunterladen
-- [x ] **Bilder optimieren** - WebP-Format, komprimieren
-- [x ] **Bildergalerie einbauen** - Wie beim Vorderhaus (Slideshow)
+- [x] **Bilder optimieren** - WebP-Format, komprimieren
+- [x] **Bildergalerie einbauen** - Wie beim Vorderhaus (Slideshow)
 - [ ] **Alt-Texte schreiben** - Beschreibende Texte für jedes Bild
 
 ### Mögliche Bildquellen
@@ -56,12 +56,12 @@ Aktuell hat die Seite `/alter-speicher/` nur **ein einziges Bild**. Es werden me
 
 ### Benötigte Motive
 
-- [ x] Schlafbereich
-- [x ] Küche/Kochnische
-- [ x] Badezimmer
-- [ x] Wohnbereich
-- [ x] Außenansicht/Eingang
-- [ x] Details (Möbel, Dekoration)
+- [x] Schlafbereich
+- [x] Küche/Kochnische
+- [x] Badezimmer
+- [x] Wohnbereich
+- [x] Außenansicht/Eingang
+- [x] Details (Möbel, Dekoration)
 
 ---
 
@@ -106,7 +106,7 @@ src/pages/
 
 ### Zusätzlich benötigt
 
-- [ x] Sprachumschalter im Header
+- [x] Sprachumschalter im Header
 - [ ] hreflang-Tags für SEO
 - [ ] Layout.astro mit dynamischem `lang` Attribut
 

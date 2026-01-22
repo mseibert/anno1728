@@ -13,6 +13,14 @@ import Layout from '../layouts/Layout.astro';
 		<span class="photo-credit">Foto: Horst Goebel</span>
 	</div>
 
+	<div class="booking-cta">
+		<h2>Jetzt online buchen</h2>
+		<p>Prüfen Sie die Verfügbarkeit und buchen Sie direkt Ihren Aufenthalt</p>
+		<a href="https://fewoseibert.smoobu.net/en/" target="_blank" rel="noopener" class="booking-button">
+			Buchung anfragen
+		</a>
+	</div>
+
 	<section class="pricing-section">
 		<h2>Preise</h2>
 		<div class="price-cards">
@@ -433,6 +441,46 @@ import Layout from '../layouts/Layout.astro';
 
 	.button.secondary:hover {
 		background: rgba(255,255,255,0.25);
+	}
+
+	/* Booking CTA */
+	.booking-cta {
+		background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
+		color: #fff;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+		margin-bottom: 2rem;
+		box-shadow: 0 8px 30px rgba(139, 35, 50, 0.3);
+	}
+
+	.booking-cta h2 {
+		color: #fff;
+		margin-bottom: 0.5rem;
+		font-size: 1.6rem;
+	}
+
+	.booking-cta p {
+		opacity: 0.9;
+		margin-bottom: 1.5rem;
+		font-size: 1rem;
+	}
+
+	.booking-button {
+		display: inline-block;
+		background: #fff;
+		color: #8B2332;
+		padding: 1rem 2.5rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 1.1rem;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.booking-button:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 	}
 
 	@media (max-width: 600px) {

@@ -6,12 +6,12 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 
 ## Dringend (Funktionalität/Rechtliches)
 
-- [ ] **Smoobu-Buchungslink einbauen** - `https://fewoseibert.smoobu.net/en/` auf Buchungsseite und CTA-Buttons
-- [ ] **Impressum erstellen** - Pflicht für deutsche Websites (Name, Adresse, Kontakt, ggf. Steuernummer)
-- [ ] **Datenschutz erstellen** - Pflicht nach DSGVO
-- [ ] **Englische Version** - Alle Seiten auf Englisch übersetzen (siehe Abschnitt unten)
+- [x ] **Smoobu-Buchungslink einbauen** - `https://fewoseibert.smoobu.net/en/` auf Buchungsseite und CTA-Buttons
+- [ x] **Impressum erstellen** - Pflicht für deutsche Websites (Name, Adresse, Kontakt, ggf. Steuernummer)
+- [ x] **Datenschutz erstellen** - Pflicht nach DSGVO
+- [x ] **Englische Version** - Alle Seiten auf Englisch übersetzen (siehe Abschnitt unten)
 - [ ] **12 Blog-Artikel migrieren** - Von anno-1728.de übernehmen (siehe Abschnitt unten)
-- [ ] **Favicon erstellen** - Eigenes Icon statt Astro-Standard
+- [x ] **Favicon erstellen** - Eigenes Icon statt Astro-Standard
 - [ ] **Impressionen-Seite** - Bildergalerie mit ~25 Fotos von der alten Website
 - [ ] **Kontaktformular mit E-Mail** - Vercel Functions Lernprojekt (siehe Abschnitt unten)
 
@@ -30,7 +30,7 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 
 ## Essen-Seite korrigieren
 
-- [ ] **Firenze entfernen** - Restaurant existiert nicht mehr
+- [ x] **Firenze entfernen** - Restaurant existiert nicht mehr
 - [ ] **Milchbar hinzufügen** - Bahnhofstr. 1, 65527 Niedernhausen (Frühstück)
 - [ ] **Restaurant Ente hinzufügen** - Wiesbadener Institution, gehobene Küche
 

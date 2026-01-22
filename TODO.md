@@ -142,29 +142,82 @@ src/pages/
 
 ---
 
-## Lernprojekt: Kontaktformular mit Vercel Functions
+## Lernprojekt: Kontaktformular mit Vercel Backend Function
+
+> **Hinweis:** Dieses Projekt wird gemeinsam mit Helene umgesetzt. Sie entscheidet, welche Felder im Formular abgefragt werden.
+
+### Was ist eine Vercel Backend Function?
+
+Eine **Vercel Backend Function** (auch "Serverless Function" genannt) ist Code, der auf dem Server läuft - nicht im Browser des Besuchers.
+
+**Warum brauchen wir das?**
+
+| Problem | Lösung |
+|---------|--------|
+| E-Mails können nicht direkt aus dem Browser verschickt werden | Die Backend Function verschickt die E-Mail serverseitig |
+| API-Keys (z.B. für E-Mail-Dienste) dürfen nicht im Browser sichtbar sein | Die Backend Function hält den Key geheim auf dem Server |
+| Spam-Schutz ist im Browser leicht zu umgehen | Die Backend Function kann Anfragen validieren und limitieren |
+
+**Wie funktioniert das technisch?**
+
+```
+┌─────────────────┐      ┌─────────────────────┐      ┌─────────────┐
+│  Browser        │      │  Vercel Server      │      │  E-Mail     │
+│  (Besucher)     │ ──── │  (Backend Function) │ ──── │  Service    │
+│                 │      │                     │      │  (Resend)   │
+│  Formular       │ POST │  /api/contact       │ API  │             │
+│  ausfüllen      │ ───► │  - Daten validieren │ ───► │  E-Mail an  │
+│  & absenden     │      │  - E-Mail senden    │      │  Vermieter  │
+└─────────────────┘      └─────────────────────┘      └─────────────┘
+```
+
+1. Besucher füllt das Kontaktformular aus und klickt "Absenden"
+2. Der Browser schickt die Daten an `/api/contact` (unsere Backend Function)
+3. Die Backend Function prüft die Daten und verschickt die E-Mail über Resend
+4. Der Besucher sieht eine Erfolgsmeldung
+
+**Vorteile von Vercel Backend Functions:**
+
+- **Kein eigener Server nötig** - Vercel hostet und skaliert automatisch
+- **Kostenlos** für kleine Projekte (Vercel Free Tier: 100.000 Aufrufe/Monat)
+- **Einfach** - Eine TypeScript-Datei im `src/pages/api/` Ordner reicht
+- **Sicher** - Secrets wie API-Keys bleiben auf dem Server
 
 ### Was dabei gelernt wird
 
-- Frontend: HTML-Formulare, Form Validation, Fetch API
-- Backend: Serverless Functions, API Routes
-- E-Mail: SMTP, Transactional Email Services (Resend)
-- Security: Rate Limiting, Spam-Schutz
+- **Frontend:** HTML-Formulare, Form Validation, Fetch API
+- **Backend:** Serverless Functions, API Routes, Request/Response-Handling
+- **E-Mail:** Transactional Email Services (Resend)
+- **Security:** Umgang mit API-Keys, Eingabevalidierung
 
-### Setup-Schritte
+### Formularfelder
 
-1. [ ] Resend Account erstellen (https://resend.com)
-2. [ ] API Key generieren
-3. [ ] `@astrojs/vercel` Adapter installieren (`pnpm add @astrojs/vercel`)
-4. [ ] `resend` Package installieren (`pnpm add resend`)
-5. [ ] Astro auf `output: 'server'` umstellen in `astro.config.mjs`
-6. [ ] API Route erstellen: `src/pages/api/contact.ts`
-7. [ ] Kontaktformular bauen: `src/pages/kontakt.astro`
-8. [ ] Lokal testen mit `pnpm dev`
-9. [ ] Environment Variable `RESEND_API_KEY` in Vercel setzen
-10. [ ] Deployen und testen
+**Entscheidung durch Helene:** Welche Felder sollen abgefragt werden?
 
-### API Route Beispiel
+Mögliche Felder:
+- [ ] Name
+- [ ] E-Mail-Adresse
+- [ ] Telefonnummer
+- [ ] Gewünschtes Objekt (Vorderhaus / Alter Speicher)
+- [ ] Check-in Datum
+- [ ] Check-out Datum
+- [ ] Anzahl Personen
+- [ ] Nachricht / Bemerkungen
+
+### Setup-Schritte (gemeinsam umsetzen)
+
+1. [ ] **Formularfelder festlegen** - Helene entscheidet
+2. [ ] **Resend Account erstellen** - https://resend.com (kostenlos bis 3.000 E-Mails/Monat)
+3. [ ] **API Key generieren** - In Resend Dashboard
+4. [ ] **Packages installieren** - `pnpm add @astrojs/vercel resend`
+5. [ ] **Astro konfigurieren** - `output: 'server'` in `astro.config.mjs`
+6. [ ] **Backend Function erstellen** - `src/pages/api/contact.ts`
+7. [ ] **Kontaktformular bauen** - `src/pages/kontakt.astro`
+8. [ ] **Lokal testen** - `pnpm dev`
+9. [ ] **Vercel konfigurieren** - Environment Variable `RESEND_API_KEY` setzen
+10. [ ] **Deployen und testen**
+
+### Technische Referenz: API Route
 
 ```typescript
 // src/pages/api/contact.ts
@@ -175,25 +228,26 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.json();
-  const { name, email, message, checkin, checkout } = data;
+  // Felder je nach Helenes Entscheidung anpassen
+  const { name, email, message } = data;
 
+  // Validierung
   if (!name || !email || !message) {
     return new Response(
-      JSON.stringify({ error: 'Bitte alle Felder ausfüllen' }),
+      JSON.stringify({ error: 'Bitte alle Pflichtfelder ausfüllen' }),
       { status: 400 }
     );
   }
 
+  // E-Mail versenden
   await resend.emails.send({
     from: 'Anno 1728 <kontakt@anno-1728.de>',
     to: 'fewoseibert@seibert-media.net',
     subject: `Neue Anfrage von ${name}`,
     html: `
-      <h2>Neue Buchungsanfrage</h2>
+      <h2>Neue Kontaktanfrage</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>E-Mail:</strong> ${email}</p>
-      <p><strong>Check-in:</strong> ${checkin || 'nicht angegeben'}</p>
-      <p><strong>Check-out:</strong> ${checkout || 'nicht angegeben'}</p>
       <p><strong>Nachricht:</strong></p>
       <p>${message}</p>
     `,

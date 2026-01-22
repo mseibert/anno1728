@@ -12,7 +12,7 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 - [x ] **Englische Version** - Alle Seiten auf Englisch übersetzen (siehe Abschnitt unten)
 - [ ] **12 Blog-Artikel migrieren** - Von anno-1728.de übernehmen (siehe Abschnitt unten)
 - [x ] **Favicon erstellen** - Eigenes Icon statt Astro-Standard
-- [ ] **Impressionen-Seite** - Bildergalerie mit ~25 Fotos von der alten Website
+- [x ] **Impressionen-Seite** - Bildergalerie mit ~25 Fotos von der alten Website
 - [ ] **Kontaktformular mit E-Mail** - Vercel Functions Lernprojekt (siehe Abschnitt unten)
 
 ---

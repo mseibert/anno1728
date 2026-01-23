@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.anno1728-ferienhaus-wiesbaden.de',
-  output: 'hybrid',
+  output: 'server',
   integrations: [sitemap()],
   adapter: vercel()
 });

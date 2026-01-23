@@ -1,0 +1,282 @@
+---
+import { contactTranslations, type ContactLang } from '../i18n/contact';
+
+interface Props {
+  lang?: ContactLang;
+}
+
+const { lang = 'de' } = Astro.props;
+const t = contactTranslations[lang];
+---
+
+<form id="contact-form" class="contact-form" data-lang={lang}>
+  <!-- Honeypot field (hidden from humans, bots fill it) -->
+  <div class="hp-field" aria-hidden="true">
+    <label for="website">Website</label>
+    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">{t.name} <span class="required">*</span></label>
+      <input type="text" name="name" id="name" required placeholder={t.namePlaceholder} />
+    </div>
+    <div class="form-group">
+      <label for="email">{t.email} <span class="required">*</span></label>
+      <input type="email" name="email" id="email" required placeholder={t.emailPlaceholder} />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">{t.phone}</label>
+    <input type="tel" name="phone" id="phone" placeholder={t.phonePlaceholder} />
+  </div>
+
+  <fieldset class="form-group">
+    <legend>{t.property}</legend>
+    <div class="radio-group">
+      <label class="radio-label">
+        <input type="radio" name="property" value="vorderhaus" />
+        <span>{t.propertyFront}</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="property" value="alter-speicher" />
+        <span>{t.propertyBarn}</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="property" value="beide" />
+        <span>{t.propertyBoth}</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <div class="form-row form-row-three">
+    <div class="form-group">
+      <label for="checkin">{t.checkin}</label>
+      <input type="date" name="checkin" id="checkin" />
+    </div>
+    <div class="form-group">
+      <label for="checkout">{t.checkout}</label>
+      <input type="date" name="checkout" id="checkout" />
+    </div>
+    <div class="form-group">
+      <label for="guests">{t.guests}</label>
+      <select name="guests" id="guests">
+        <option value="">{t.guestsPlaceholder}</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="message">{t.message} <span class="required">*</span></label>
+    <textarea name="message" id="message" rows="5" required placeholder={t.messagePlaceholder}></textarea>
+  </div>
+
+  <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+
+  <button type="submit" id="submit-btn" class="submit-btn">
+    <span class="btn-text">{t.submit}</span>
+    <span class="btn-loading" style="display: none;">{t.sending}</span>
+  </button>
+</form>
+
+<script define:vars={{ translations: contactTranslations }}>
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const statusDiv = document.getElementById('form-status');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnLoading = submitBtn.querySelector('.btn-loading');
+  const lang = form.dataset.lang || 'de';
+  const t = translations[lang];
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    statusDiv.className = 'form-status';
+    statusDiv.textContent = '';
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, lang }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        statusDiv.className = 'form-status success';
+        statusDiv.textContent = t.success;
+        form.reset();
+      } else {
+        statusDiv.className = 'form-status error';
+        statusDiv.textContent = result.error || t.errorServer;
+      }
+    } catch (error) {
+      statusDiv.className = 'form-status error';
+      statusDiv.textContent = t.errorServer;
+    } finally {
+      submitBtn.disabled = false;
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
+    }
+  });
+</script>
+
+<style>
+  .contact-form {
+    max-width: 600px;
+  }
+
+  /* Honeypot - hidden from humans */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-row-three {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    .form-row,
+    .form-row-three {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  legend {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    color: #333;
+  }
+
+  .required {
+    color: #8B2332;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #8B2332;
+    box-shadow: 0 0 0 2px rgba(139, 35, 50, 0.15);
+  }
+
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .radio-label input[type="radio"] {
+    width: auto;
+    margin: 0;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .submit-btn {
+    background: #8B2332;
+    color: #fff;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    background: #6B1A26;
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: none;
+  }
+
+  .form-status.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .form-status.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+</style>

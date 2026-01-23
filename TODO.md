@@ -67,11 +67,42 @@ https://fewoseibert.smoobu.net/en/apartment/AlterSpeicher/909940
 
 ---
 
+## Performance (Bildoptimierung)
+
+Aktuell liegen alle Bilder im `/public/`-Ordner und werden **nicht optimiert** ausgeliefert. Astro kann Bilder automatisch komprimieren und in moderne Formate (WebP/AVIF) konvertieren.
+
+### Aufgaben
+
+- [ ] **Bilder nach `src/assets/` verschieben** - Statt `/public/` für automatische Optimierung
+- [ ] **Astro `<Image>` Komponente nutzen** - Import von `astro:assets` statt `<img>` Tags
+- [ ] **Responsive Bilder** - `srcset` für verschiedene Bildschirmgrößen generieren
+- [ ] **Lazy Loading** - Bilder unterhalb des sichtbaren Bereichs verzögert laden
+
+### Betroffene Dateien
+
+- `/public/speicher/*.jpg` → `/src/assets/speicher/`
+- `/public/gallery-*.jpg` → `/src/assets/gallery/`
+- `/public/images/blog/*` → `/src/assets/blog/`
+- Alle Seiten mit `<img>` Tags
+
+### Technische Umsetzung
+
+```astro
+---
+import { Image } from 'astro:assets';
+import speicherImg from '../assets/speicher/IMG_9763.jpg';
+---
+
+<Image src={speicherImg} alt="Beschreibung" width={800} />
+```
+
+---
+
 ## Nice-to-have (UX)
 
-- [ ] **Mobiles Hamburger-Menü** - Bessere Navigation auf kleinen Bildschirmen
-- [ ] **404-Seite** - Freundliche Fehlerseite (auch auf Englisch)
-- [ ] **README.md** - Dokumentation wie man die Website lokal startet
+- [x] **Mobiles Hamburger-Menü** - Implementiert in Layout.astro
+- [x] **404-Seite** - Zweisprachige Fehlerseite mit automatischer Spracherkennung
+- [x] **README.md** - Projektdokumentation mit Setup-Anleitung
 
 ---
 

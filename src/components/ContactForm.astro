@@ -16,73 +16,105 @@ const t = contactTranslations[lang];
     <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
   </div>
 
-  <div class="form-row form-row-three">
-    <div class="form-group">
-      <label for="name">{t.name} <span class="required">*</span></label>
-      <input type="text" name="name" id="name" required placeholder={t.namePlaceholder} />
-    </div>
-    <div class="form-group">
-      <label for="email">{t.email} <span class="required">*</span></label>
-      <input type="email" name="email" id="email" required placeholder={t.emailPlaceholder} />
-    </div>
-    <div class="form-group">
-      <label for="phone">{t.phone}</label>
-      <input type="tel" name="phone" id="phone" placeholder={t.phonePlaceholder} />
-    </div>
+  <!-- Section: Contact Info -->
+  <div class="form-section">
+    <h3 class="section-title">{lang === 'en' ? 'Your Contact Details' : 'Ihre Kontaktdaten'}</h3>
+    <fieldset class="form-fieldset">
+      <div class="form-row-3">
+        <div class="form-group">
+          <label for="name">{t.name} <span class="required">*</span></label>
+          <input type="text" name="name" id="name" required placeholder={t.namePlaceholder} />
+        </div>
+        <div class="form-group">
+          <label for="email">{t.email} <span class="required">*</span></label>
+          <input type="email" name="email" id="email" required placeholder={t.emailPlaceholder} />
+        </div>
+        <div class="form-group">
+          <label for="phone">{t.phone} <span class="optional">({lang === 'en' ? 'optional' : 'optional'})</span></label>
+          <input type="tel" name="phone" id="phone" placeholder="+49 123 456789" />
+        </div>
+      </div>
+    </fieldset>
   </div>
 
-  <fieldset class="form-group property-fieldset">
-    <legend>{t.property}</legend>
-    <div class="radio-group">
-      <label class="radio-label">
-        <input type="radio" name="property" value="vorderhaus" />
-        <span>{t.propertyFront}</span>
-      </label>
-      <label class="radio-label">
-        <input type="radio" name="property" value="alter-speicher" />
-        <span>{t.propertyBarn}</span>
-      </label>
-      <label class="radio-label">
-        <input type="radio" name="property" value="beide" />
-        <span>{t.propertyBoth}</span>
-      </label>
-    </div>
-  </fieldset>
+  <!-- Section: Booking Details -->
+  <div class="form-section">
+    <h3 class="section-title">{lang === 'en' ? 'Booking Details' : 'Buchungsdetails'}</h3>
 
-  <div class="form-row form-row-three">
-    <div class="form-group">
-      <label for="checkin">{t.checkin}</label>
-      <input type="date" name="checkin" id="checkin" />
+    <div class="form-group property-group">
+      <label class="property-label">{t.property}</label>
+      <div class="radio-group">
+        <label class="radio-card">
+          <input type="radio" name="property" value="vorderhaus" />
+          <span class="radio-card-content">
+            <span class="radio-icon"></span>
+            <span class="radio-text">{t.propertyFront}</span>
+          </span>
+        </label>
+        <label class="radio-card">
+          <input type="radio" name="property" value="alter-speicher" />
+          <span class="radio-card-content">
+            <span class="radio-icon"></span>
+            <span class="radio-text">{t.propertyBarn}</span>
+          </span>
+        </label>
+        <label class="radio-card">
+          <input type="radio" name="property" value="beide" />
+          <span class="radio-card-content">
+            <span class="radio-icon"></span>
+            <span class="radio-text">{t.propertyBoth}</span>
+          </span>
+        </label>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="checkout">{t.checkout}</label>
-      <input type="date" name="checkout" id="checkout" />
-    </div>
-    <div class="form-group">
-      <label for="guests">{t.guests}</label>
-      <select name="guests" id="guests">
-        <option value="">{t.guestsPlaceholder}</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-      </select>
-    </div>
+
+    <fieldset class="form-fieldset">
+      <div class="form-row-3">
+        <div class="form-group">
+          <label for="checkin">{t.checkin}</label>
+          <input type="date" name="checkin" id="checkin" />
+        </div>
+        <div class="form-group">
+          <label for="checkout">{t.checkout}</label>
+          <input type="date" name="checkout" id="checkout" />
+        </div>
+        <div class="form-group">
+          <label for="guests">{t.guests}</label>
+          <select name="guests" id="guests">
+            <option value="">{t.guestsPlaceholder}</option>
+            <option value="1">1 {lang === 'en' ? 'guest' : 'Person'}</option>
+            <option value="2">2 {lang === 'en' ? 'guests' : 'Personen'}</option>
+            <option value="3">3 {lang === 'en' ? 'guests' : 'Personen'}</option>
+            <option value="4">4 {lang === 'en' ? 'guests' : 'Personen'}</option>
+            <option value="5">5 {lang === 'en' ? 'guests' : 'Personen'}</option>
+            <option value="6">6 {lang === 'en' ? 'guests' : 'Personen'}</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
   </div>
 
-  <div class="form-group">
-    <label for="message">{t.message} <span class="required">*</span></label>
-    <textarea name="message" id="message" rows="5" required placeholder={t.messagePlaceholder}></textarea>
+  <!-- Section: Message -->
+  <div class="form-section">
+    <h3 class="section-title">{lang === 'en' ? 'Your Message' : 'Ihre Nachricht'}</h3>
+    <div class="form-group">
+      <label for="message" class="sr-only">{t.message}</label>
+      <textarea name="message" id="message" rows="5" required placeholder={t.messagePlaceholder}></textarea>
+      <p class="field-hint">{lang === 'en' ? '* Required fields' : '* Pflichtfelder'}</p>
+    </div>
   </div>
 
   <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
 
-  <button type="submit" id="submit-btn" class="submit-btn">
-    <span class="btn-text">{t.submit}</span>
-    <span class="btn-loading" style="display: none;">{t.sending}</span>
-  </button>
+  <div class="form-actions">
+    <button type="submit" id="submit-btn" class="submit-btn">
+      <span class="btn-text">{t.submit}</span>
+      <span class="btn-loading" style="display: none;">{t.sending}</span>
+      <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
 </form>
 
 <script define:vars={{ translations: contactTranslations }}>
@@ -97,7 +129,6 @@ const t = contactTranslations[lang];
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Show loading state
     submitBtn.disabled = true;
     btnText.style.display = 'none';
     btnLoading.style.display = 'inline';
@@ -138,59 +169,86 @@ const t = contactTranslations[lang];
 <style>
   .contact-form {
     width: 100%;
+    max-width: 800px;
   }
 
-  /* Honeypot - hidden from humans */
   .hp-field {
     position: absolute;
     left: -9999px;
     top: -9999px;
   }
 
-  .form-row {
+  /* Sections */
+  .form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .form-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #8B2332;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Fieldset boxes */
+  .form-fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0;
+    background: #fafafa;
+  }
+
+  /* 3-Column Row */
+  .form-row-3 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    margin-top: 0;
   }
 
-  .form-row-three {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @media (max-width: 700px) {
-    .form-row-three {
-      grid-template-columns: 1fr 1fr;
+  @media (max-width: 768px) {
+    .form-row-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .form-row-3 .form-group:last-child {
+      grid-column: span 2;
     }
   }
 
   @media (max-width: 500px) {
-    .form-row,
-    .form-row-three {
+    .form-row-3 {
       grid-template-columns: 1fr;
     }
-
-    .radio-group {
-      flex-direction: column !important;
+    .form-row-3 .form-group:last-child {
+      grid-column: span 1;
     }
   }
 
+  /* Form Groups */
   .form-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0;
+    padding-right: 1rem;
   }
 
-  fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
+  .form-row-3 .form-group:last-child {
+    padding-right: 0;
   }
 
-  .property-fieldset {
-    background: #f9f9f9;
-    padding: 1rem;
-    border-radius: 6px;
+  .property-group {
+    margin-bottom: 1.5rem;
   }
 
-  legend {
+  .property-label {
+    display: block;
     font-weight: 500;
     margin-bottom: 0.75rem;
     color: #333;
@@ -199,14 +257,39 @@ const t = contactTranslations[lang];
   label {
     display: block;
     font-weight: 500;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
     color: #333;
+    font-size: 0.95rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
   }
 
   .required {
     color: #8B2332;
   }
 
+  .optional {
+    color: #888;
+    font-weight: 400;
+    font-size: 0.85rem;
+  }
+
+  .field-hint {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  /* Inputs */
   input[type="text"],
   input[type="email"],
   input[type="tel"],
@@ -214,13 +297,24 @@ const t = contactTranslations[lang];
   select,
   textarea {
     width: 100%;
-    padding: 0.65rem 0.85rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.2s, box-shadow 0.2s;
     background: #fff;
+    box-sizing: border-box;
+  }
+
+  .form-row-3 input,
+  .form-row-3 select {
+    width: calc(100% - 1rem);
+  }
+
+  .form-row-3 .form-group:last-child input,
+  .form-row-3 .form-group:last-child select {
+    width: 100%;
   }
 
   input:focus,
@@ -228,63 +322,150 @@ const t = contactTranslations[lang];
   textarea:focus {
     outline: none;
     border-color: #8B2332;
-    box-shadow: 0 0 0 2px rgba(139, 35, 50, 0.15);
+    box-shadow: 0 0 0 3px rgba(139, 35, 50, 0.1);
   }
 
-  .radio-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .radio-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: normal;
-    cursor: pointer;
-    padding: 0.25rem 0;
-  }
-
-  .radio-label input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    margin: 0;
-    accent-color: #8B2332;
+  input::placeholder,
+  textarea::placeholder {
+    color: #aaa;
   }
 
   textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
+  }
+
+  /* Radio Cards */
+  .radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .radio-card {
+    flex: 1;
+    min-width: 140px;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  .radio-card input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .radio-card-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.2s;
+    background: #fff;
+  }
+
+  .radio-card:hover .radio-card-content {
+    border-color: #ccc;
+    background: #fafafa;
+  }
+
+  .radio-card input:checked + .radio-card-content {
+    border-color: #8B2332;
+    background: #fdf6f7;
+  }
+
+  .radio-icon {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .radio-card input:checked + .radio-card-content .radio-icon {
+    border-color: #8B2332;
+  }
+
+  .radio-card input:checked + .radio-card-content .radio-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #8B2332;
+    border-radius: 50%;
+  }
+
+  .radio-text {
+    font-weight: 500;
+    color: #333;
+  }
+
+  @media (max-width: 500px) {
+    .radio-card {
+      flex: 1 1 100%;
+    }
+  }
+
+  /* Submit Button */
+  .form-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .submit-btn {
-    background: #8B2332;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #8B2332 0%, #6B1A26 100%);
     color: #fff;
     border: none;
-    padding: 0.9rem 2.5rem;
+    padding: 1rem 2rem;
     font-size: 1rem;
-    font-weight: 500;
-    border-radius: 4px;
+    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(139, 35, 50, 0.3);
   }
 
   .submit-btn:hover:not(:disabled) {
-    background: #6B1A26;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 35, 50, 0.4);
+  }
+
+  .submit-btn:active:not(:disabled) {
+    transform: translateY(0);
   }
 
   .submit-btn:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+    transform: none;
   }
 
+  .btn-arrow {
+    transition: transform 0.2s;
+  }
+
+  .submit-btn:hover:not(:disabled) .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  /* Status Messages */
   .form-status {
-    padding: 0.85rem 1rem;
-    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
     margin-bottom: 1rem;
     display: none;
+    font-weight: 500;
   }
 
   .form-status.success {

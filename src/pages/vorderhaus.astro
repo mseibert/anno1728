@@ -1,5 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Lightbox from '../components/Lightbox.astro';
+
+const images = [
+	'/anno-1728-com-wiesbaden-auringen-40.webp',
+	'/gallery-01.jpg',
+	'/gallery-02.jpg',
+	'/gallery-03.jpg',
+	'/gallery-04.jpg',
+	'/gallery-05.jpg',
+	'/gallery-06.jpg',
+	'/gallery-07.jpg',
+	'/gallery-08.jpg',
+	'/gallery-09.jpg',
+	'/gallery-10.jpg',
+	'/gallery-11.jpg',
+	'/gallery-12.jpg',
+];
 ---
 
 <Layout title="Vorderhaus - Anno 1728">
@@ -12,49 +29,21 @@ import Layout from '../layouts/Layout.astro';
 	<div class="slideshow">
 		<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
 		<div class="slides-container">
-			<div class="slide active">
-				<img src="/anno-1728-com-wiesbaden-auringen-40.webp" alt="Vorderhaus Anno 1728" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-01.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-02.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-03.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-04.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-05.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-06.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-07.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-08.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-09.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-10.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-11.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-12.jpg" alt="Anno 1728 Impression" />
-			</div>
+			{images.map((src, index) => (
+				<div class={`slide ${index === 0 ? 'active' : ''}`}>
+					<img
+						src={src}
+						alt={`Vorderhaus ${index + 1}`}
+						onclick={`openGalleryLightbox(${index})`}
+						style="cursor: pointer;"
+					/>
+				</div>
+			))}
 		</div>
 		<button class="slide-arrow next" onclick="changeSlide(1)">&#10095;</button>
 		<span class="photo-credit">Foto: Horst Goebel</span>
-		<div class="slide-counter"><span id="currentSlide">1</span> / 13</div>
+		<div class="slide-counter"><span id="currentSlide">1</span> / {images.length}</div>
+		<div class="click-hint">Klicken für Vollbild</div>
 	</div>
 
 	<div class="intro-text">
@@ -99,6 +88,8 @@ import Layout from '../layouts/Layout.astro';
 			<a href="/geschichte/" class="button secondary">Mehr zur Geschichte</a>
 		</div>
 	</div>
+
+	<Lightbox />
 </Layout>
 
 <style>
@@ -210,6 +201,19 @@ import Layout from '../layouts/Layout.astro';
 		position: absolute;
 		bottom: 12px;
 		left: 12px;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		border-radius: 4px;
+		z-index: 10;
+	}
+
+	.click-hint {
+		position: absolute;
+		bottom: 12px;
+		left: 50%;
+		transform: translateX(-50%);
 		background: rgba(0, 0, 0, 0.6);
 		color: #fff;
 		font-size: 0.75rem;
@@ -340,7 +344,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 </style>
 
-<script>
+<script define:vars={{ images }}>
 	let currentIndex = 0;
 	const slides = document.querySelectorAll('.slide');
 	const totalSlides = slides.length;
@@ -358,5 +362,9 @@ import Layout from '../layouts/Layout.astro';
 
 	window.changeSlide = function(direction) {
 		showSlide(currentIndex + direction);
+	}
+
+	window.openGalleryLightbox = function(index) {
+		window.openLightbox(images, index);
 	}
 </script>

@@ -1,5 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Lightbox from '../components/Lightbox.astro';
+
+const images = [
+	'/speicher/IMG_9763.jpg',
+	'/speicher/IMG_9766.jpg',
+	'/speicher/IMG_9767.jpg',
+	'/speicher/IMG_9769.jpg',
+	'/speicher/IMG_9771.jpg',
+	'/speicher/IMG_9772.jpg',
+	'/speicher/IMG_9773.jpg',
+	'/speicher/IMG_9774.jpg',
+	'/speicher/IMG_9776.jpg',
+	'/speicher/IMG_9779.jpg',
+	'/speicher/IMG_9780.jpg',
+	'/speicher/IMG_9781.jpg',
+	'/speicher/IMG_9794.jpg',
+];
 ---
 
 <Layout title="Alter Speicher - Anno 1728">
@@ -8,8 +25,23 @@ import Layout from '../layouts/Layout.astro';
 		<p class="subtitle">Gemütliche Ferienwohnung mit rustikalem Charme</p>
 	</div>
 
-	<div class="hero-image">
-		<img src="/alter-speicher.jpg" alt="Alter Speicher" />
+	<div class="slideshow">
+		<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+		<div class="slides-container">
+			{images.map((src, index) => (
+				<div class={`slide ${index === 0 ? 'active' : ''}`}>
+					<img
+						src={src}
+						alt={`Alter Speicher ${index + 1}`}
+						onclick={`openGalleryLightbox(${index})`}
+						style="cursor: pointer;"
+					/>
+				</div>
+			))}
+		</div>
+		<button class="slide-arrow next" onclick="changeSlide(1)">&#10095;</button>
+		<div class="slide-counter"><span id="currentSlide">1</span> / {images.length}</div>
+		<div class="click-hint">Klicken für Vollbild</div>
 	</div>
 
 	<div class="intro-text">
@@ -49,6 +81,8 @@ import Layout from '../layouts/Layout.astro';
 			<a href="/vorderhaus/" class="button secondary">Zum Vorderhaus</a>
 		</div>
 	</div>
+
+	<Lightbox />
 </Layout>
 
 <style>
@@ -68,21 +102,84 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 1.1rem;
 	}
 
-	.hero-image {
+	/* Slideshow */
+	.slideshow {
+		position: relative;
 		border-radius: 12px;
 		overflow: hidden;
 		margin-bottom: 2rem;
 		box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-		position: relative;
+		background: #000;
 	}
 
-	.hero-image img {
+	.slides-container {
+		position: relative;
 		width: 100%;
-		height: auto;
+		height: 400px;
+	}
+
+	.slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.slide.active {
+		opacity: 1;
+	}
+
+	.slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		display: block;
 	}
 
-	.photo-credit {
+	.slide-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.5);
+		color: #fff;
+		border: none;
+		padding: 1rem 0.75rem;
+		font-size: 1.5rem;
+		cursor: pointer;
+		z-index: 10;
+		transition: background 0.2s;
+	}
+
+	.slide-arrow:hover {
+		background: rgba(0, 0, 0, 0.8);
+	}
+
+	.slide-arrow.prev {
+		left: 0;
+		border-radius: 0 6px 6px 0;
+	}
+
+	.slide-arrow.next {
+		right: 0;
+		border-radius: 6px 0 0 6px;
+	}
+
+	.slide-counter {
+		position: absolute;
+		bottom: 12px;
+		left: 12px;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		border-radius: 4px;
+		z-index: 10;
+	}
+
+	.click-hint {
 		position: absolute;
 		bottom: 12px;
 		right: 12px;
@@ -91,6 +188,18 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 0.75rem;
 		padding: 0.25rem 0.6rem;
 		border-radius: 4px;
+		z-index: 10;
+	}
+
+	@media (max-width: 600px) {
+		.slides-container {
+			height: 250px;
+		}
+
+		.slide-arrow {
+			padding: 0.75rem 0.5rem;
+			font-size: 1.2rem;
+		}
 	}
 
 	.intro-text {
@@ -203,3 +312,28 @@ import Layout from '../layouts/Layout.astro';
 		background: rgba(255,255,255,0.25);
 	}
 </style>
+
+<script define:vars={{ images }}>
+	let currentIndex = 0;
+	const slides = document.querySelectorAll('.slide');
+	const totalSlides = slides.length;
+	const counter = document.getElementById('currentSlide');
+
+	function showSlide(index) {
+		if (index >= totalSlides) index = 0;
+		if (index < 0) index = totalSlides - 1;
+
+		slides.forEach(slide => slide.classList.remove('active'));
+		slides[index].classList.add('active');
+		currentIndex = index;
+		if (counter) counter.textContent = currentIndex + 1;
+	}
+
+	window.changeSlide = function(direction) {
+		showSlide(currentIndex + direction);
+	}
+
+	window.openGalleryLightbox = function(index) {
+		window.openLightbox(images, index);
+	}
+</script>

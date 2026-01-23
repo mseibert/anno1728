@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Deluxe Traumfabrik - Anno 1728">
+	<article class="blog-article">
+		<div class="article-header">
+			<h1>Deluxe Traumfabrik – für Schlafmützen & Frühaufsteher</h1>
+			<p class="meta">12. September 2017 · Foto: Horst Goebel</p>
+		</div>
+
+		<img src="/images/blog/deluxe-schlafzimmer-featured.jpg" alt="Großes Schlafzimmer mit King-Size-Bett" class="hero-image" />
+
+		<div class="article-content">
+			<p>Schlafmütze oder Frühaufsteher? Kein Problem, in unserem großen Schlafzimmer kommen beide gleichermaßen auf Ihre Kosten. Das hiesige King-Size-Bett lässt das Herz eines Langschläfers höher schlagen. Und für die Frühaufsteher erstrahlt das Zimmer schon in den frühen Morgenstunden im vollen Glanze und erfüllt den Raum mit Wärme.</p>
+		</div>
+
+		<div class="video-embed">
+			<iframe src="https://www.youtube.com/embed/3RChguW9l_8" title="Deluxe Traumfabrik Video" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<a href="/blog/" class="back-link">Zurück zum Blog</a>
+	</article>
+</Layout>
+
+<style>
+	.blog-article { max-width: 700px; }
+	.article-header h1 { font-size: 1.8rem; color: #8B2332; margin-bottom: 0.25rem; line-height: 1.3; }
+	.meta { color: #999; font-size: 0.9rem; margin-bottom: 1.5rem; }
+	.hero-image { width: 100%; border-radius: 6px; margin-bottom: 1.5rem; }
+	.article-content p { margin-bottom: 1rem; line-height: 1.7; }
+	.video-embed { position: relative; padding-bottom: 56.25%; height: 0; margin: 1.5rem 0; border-radius: 6px; overflow: hidden; }
+	.video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+	.back-link { display: inline-block; margin-top: 2rem; color: #8B2332; text-decoration: none; font-weight: 600; }
+	.back-link:hover { text-decoration: underline; }
+</style>

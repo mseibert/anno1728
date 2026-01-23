@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articles = [
+	{ title: 'Ein Platz an der Sonne', date: '26. März 2019', slug: 'liegestuehle', description: 'Unsere neuen Liegestühle im Hof', image: '/images/blog/liegestuehle-01.jpg' },
+	{ title: 'Heiraten und Hochzeitsfotos', date: '6. März 2019', slug: 'hochzeitsfotos', description: 'Unser Denkmal als Foto-Location', image: '/images/blog/hochzeit-04.jpg' },
+	{ title: 'Deluxe Traumfabrik', date: '12. September 2017', slug: 'deluxe-schlafzimmer', description: 'Das große Schlafzimmer mit King-Size-Bett', image: '/images/blog/deluxe-schlafzimmer-featured.jpg' },
+	{ title: 'Kleine Traumfabrik', date: '8. September 2017', slug: 'kleines-schlafzimmer', description: 'Das gemütliche Zweibettzimmer', image: '/images/blog/kleines-schlafzimmer-featured.jpg' },
+	{ title: 'Bergsteiger aufgepasst!', date: '2. September 2017', slug: 'bergsteiger', description: 'Unsere bauzeitliche Treppe', image: '/images/blog/bergsteiger-featured.jpg' },
+	{ title: 'Übernachtung und Entspannen', date: '28. August 2017', slug: 'entspannung', description: 'Unsere Sitzbank im Hof', image: '/images/blog/entspannung-04.jpg' },
+	{ title: 'Großes Badezimmer', date: '23. August 2017', slug: 'badezimmer', description: 'Unsere kleine Wellnessoase', image: '/images/blog/badezimmer-featured.jpg' },
+	{ title: 'Urlaub im Denkmal', date: '23. August 2017', slug: 'denkmal', description: 'Was Übernachten im Denkmal besonders macht', image: '/images/blog/denkmal-featured.jpg' },
+	{ title: 'Wiesbaden zu Fuß oder mit dem Fahrrad', date: '20. August 2017', slug: 'wiesbaden-zu-fuss', description: 'Ein-Tages-Ausflug ohne Auto', image: '/images/blog/wiesbaden-featured.jpg' },
+	{ title: 'Kulinarisches aus Auringen', date: '14. August 2017', slug: 'kulinarisches', description: 'Regionale Spezialitäten und Gaststätten', image: '/images/blog/kulinarisches-featured.jpg' },
+	{ title: 'Wiesbaden und Rheingau in 2 Tagen', date: '10. Juli 2017', slug: 'wiesbaden-rheingau', description: 'Zwei-Tages-Ausflug mit Rheingau', image: '/images/blog/wiesbaden-rheingau-featured.jpg' },
+	{ title: 'Oldies', date: '8. August 2017', slug: 'oldies', description: 'Ein echter Oldie in unserem Haus', image: '/images/blog/oldies-featured.jpg' },
+	{ title: 'Sesam öffne dich', date: '3. August 2017', slug: 'technik', description: 'Flexible An- und Abreise dank Technik', image: '/images/blog/technik-featured.jpg' },
+];
+---
+
+<Layout title="Blog - Anno 1728">
+	<div class="page-header">
+		<h1>Blog</h1>
+		<p class="subtitle">Neuigkeiten und Geschichten rund um unser Ferienhaus</p>
+	</div>
+
+	<div class="blog-list">
+		{articles.map(article => (
+			<a href={`/blog/${article.slug}/`} class={`blog-card ${article.image ? 'has-image' : ''}`}>
+				{article.image && (
+					<div class="blog-card-image">
+						<img src={article.image} alt={article.title} />
+					</div>
+				)}
+				<div class="blog-card-content">
+					<h2>{article.title}</h2>
+					<p class="blog-date">{article.date}</p>
+					<p class="blog-description">{article.description}</p>
+				</div>
+			</a>
+		))}
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		font-size: 2rem;
+		color: #8B2332;
+		margin-bottom: 0.5rem;
+	}
+
+	.subtitle {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.blog-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.blog-card {
+		display: block;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		text-decoration: none;
+		color: inherit;
+		transition: border-color 0.2s, box-shadow 0.2s;
+		overflow: hidden;
+	}
+
+	.blog-card.has-image {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+	}
+
+	.blog-card:hover {
+		border-color: #8B2332;
+		box-shadow: 0 2px 8px rgba(139, 35, 50, 0.1);
+	}
+
+	.blog-card-image {
+		width: 100%;
+		height: 100%;
+		min-height: 140px;
+		overflow: hidden;
+	}
+
+	.blog-card-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.blog-card-content {
+		padding: 1.25rem 1.5rem;
+	}
+
+	.blog-card h2 {
+		font-size: 1.2rem;
+		color: #8B2332;
+		margin-bottom: 0.25rem;
+	}
+
+	.blog-date {
+		font-size: 0.85rem;
+		color: #999;
+		margin-bottom: 0.4rem;
+	}
+
+	.blog-description {
+		color: #555;
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 600px) {
+		.blog-card.has-image {
+			grid-template-columns: 1fr;
+		}
+
+		.blog-card-image {
+			height: 180px;
+		}
+	}
+</style>

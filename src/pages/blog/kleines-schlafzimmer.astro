@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Kleine Traumfabrik - Anno 1728">
+	<article class="blog-article">
+		<div class="article-header">
+			<h1>Kleine Traumfabrik</h1>
+			<p class="meta">8. September 2017 · Foto: Horst Goebel</p>
+		</div>
+
+		<img src="/images/blog/kleines-schlafzimmer-featured.jpg" alt="Das kleine Schlafzimmer im warmen Licht" class="hero-image" />
+
+		<div class="article-content">
+			<p>In unserer kleinen gemütlichen Traumfabrik können bis zu zwei Personen zur Ruhe kommen. Die Betten können sowohl nebeneinander als auch übereinander gestellt werden. Welche weitere Besonderheit das Zimmer bietet, erfahrt ihr in diesem Video.</p>
+		</div>
+
+		<div class="image-gallery">
+			<img src="/images/blog/traumfabrik-klein-01.jpg" alt="Kleines Schlafzimmer mit zwei Betten nebeneinander" />
+			<img src="/images/blog/traumfabrik-klein-02.jpg" alt="Kleines Schlafzimmer Detailansicht" />
+			<img src="/images/blog/traumfabrik-klein-03.jpg" alt="Kleines Schlafzimmer von oben" />
+		</div>
+
+		<a href="/blog/" class="back-link">Zurück zum Blog</a>
+	</article>
+</Layout>
+
+<style>
+	.blog-article { max-width: 700px; }
+	.article-header h1 { font-size: 1.8rem; color: #8B2332; margin-bottom: 0.25rem; line-height: 1.3; }
+	.meta { color: #999; font-size: 0.9rem; margin-bottom: 1.5rem; }
+	.hero-image { width: 100%; border-radius: 6px; margin-bottom: 1.5rem; }
+	.article-content p { margin-bottom: 1rem; line-height: 1.7; }
+	.image-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+	.image-gallery img { width: 100%; border-radius: 4px; }
+	.back-link { display: inline-block; margin-top: 2rem; color: #8B2332; text-decoration: none; font-weight: 600; }
+	.back-link:hover { text-decoration: underline; }
+</style>

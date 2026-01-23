@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Sesam öffne dich - Anno 1728">
+	<article class="blog-article">
+		<div class="article-header">
+			<h1>Sesam öffne dich – Technik macht's möglich</h1>
+			<p class="meta">3. August 2017</p>
+		</div>
+
+		<img src="/images/blog/technik-featured.jpg" alt="Moderner Zugang zum historischen Fachwerkhaus" class="hero-image" />
+
+		<div class="article-content">
+			<p>Warum kompliziert, wenn's auch einfach geht?! Die Technik macht's möglich. Bei uns genießen Sie bei Ihrer An- und Abreise vollste Flexibilität und mit nur wenigen Handgriffen kann Ihr Urlaub starten…</p>
+		</div>
+
+		<div class="video-embed">
+			<iframe src="https://www.youtube.com/embed/PcxQzcptGKs" title="Sesam öffne dich - Technik Video" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<a href="/blog/" class="back-link">Zurück zum Blog</a>
+	</article>
+</Layout>
+
+<style>
+	.blog-article { max-width: 700px; }
+	.article-header h1 { font-size: 1.8rem; color: #8B2332; margin-bottom: 0.25rem; line-height: 1.3; }
+	.meta { color: #999; font-size: 0.9rem; margin-bottom: 1.5rem; }
+	.hero-image { width: 100%; border-radius: 6px; margin-bottom: 1.5rem; }
+	.article-content p { margin-bottom: 1rem; line-height: 1.7; }
+	.video-embed { position: relative; padding-bottom: 56.25%; height: 0; margin: 1.5rem 0; border-radius: 6px; overflow: hidden; }
+	.video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+	.back-link { display: inline-block; margin-top: 2rem; color: #8B2332; text-decoration: none; font-weight: 600; }
+	.back-link:hover { text-decoration: underline; }
+</style>

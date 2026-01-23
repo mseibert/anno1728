@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Übernachtung und Entspannen - Anno 1728">
+	<article class="blog-article">
+		<div class="article-header">
+			<h1>Übernachtung und Entspannen in Wiesbaden</h1>
+			<p class="meta">28. August 2017</p>
+		</div>
+
+		<img src="/images/blog/entspannung-04.jpg" alt="Gemütliche Sitzecke vor dem Fachwerkhaus" class="hero-image" />
+
+		<div class="article-content">
+			<p>Seit kurzem bieten wir unseren Gästen einen Platz an der Sonne in Wiesbaden-Auringen!</p>
+
+			<p>Schlürfen Sie im Sommer Ihren morgendlichen Kaffee auf der kuscheligen Bank im Sonnenschein oder genießen Sie einfach nur so die warmen Herbsttage vor dem Haus. So erleben Sie Ihre Übernachtungen in Wiesbaden wie in einem hessischen Bilderbuch. Sie können sich natürlich auch – während die Waschmaschine und der Trockner laufen – an ihrem neuen Lieblingsplatz die Wartezeit mit einem Gläschen Rheinwein versüßen und dabei die himmlische Ruhe in unserem Hof genießen.</p>
+		</div>
+
+		<div class="image-gallery">
+			<img src="/images/blog/entspannung-01.jpg" alt="Unsere neue Sitzbank" />
+			<img src="/images/blog/entspannung-02.jpg" alt="Nehmen Sie Platz!" />
+			<img src="/images/blog/entspannung-03.jpg" alt="Auf halbem Weg zwischen Feriendomizil und Waschmaschine" />
+			<img src="/images/blog/entspannung-04.jpg" alt="Gut gepolstert für ein komfortables und entspanntes Gespräch" />
+			<img src="/images/blog/entspannung-05.jpg" alt="Genießen Sie die Sonne!" />
+		</div>
+
+		<a href="/blog/" class="back-link">Zurück zum Blog</a>
+	</article>
+</Layout>
+
+<style>
+	.blog-article { max-width: 700px; }
+	.article-header h1 { font-size: 1.8rem; color: #8B2332; margin-bottom: 0.25rem; line-height: 1.3; }
+	.meta { color: #999; font-size: 0.9rem; margin-bottom: 1.5rem; }
+	.hero-image { width: 100%; border-radius: 6px; margin-bottom: 1.5rem; }
+	.article-content p { margin-bottom: 1rem; line-height: 1.7; }
+	.image-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+	.image-gallery img { width: 100%; border-radius: 4px; }
+	.back-link { display: inline-block; margin-top: 2rem; color: #8B2332; text-decoration: none; font-weight: 600; }
+	.back-link:hover { text-decoration: underline; }
+</style>

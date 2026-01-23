@@ -2,21 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import Lightbox from '../components/Lightbox.astro';
 
-const images = [
-	'/speicher/IMG_9763.jpg',
-	'/speicher/IMG_9766.jpg',
-	'/speicher/IMG_9767.jpg',
-	'/speicher/IMG_9769.jpg',
-	'/speicher/IMG_9771.jpg',
-	'/speicher/IMG_9772.jpg',
-	'/speicher/IMG_9773.jpg',
-	'/speicher/IMG_9774.jpg',
-	'/speicher/IMG_9776.jpg',
-	'/speicher/IMG_9779.jpg',
-	'/speicher/IMG_9780.jpg',
-	'/speicher/IMG_9781.jpg',
-	'/speicher/IMG_9794.jpg',
+const gallery = [
+	{ src: '/speicher/IMG_9763.jpg', alt: 'Hofansicht mit traditionellen Fachwerkhäusern in Wiesbaden-Auringen' },
+	{ src: '/speicher/IMG_9766.jpg', alt: 'Innenhof mit Außentreppe zum Alten Speicher' },
+	{ src: '/speicher/IMG_9767.jpg', alt: 'Fachwerkhaus mit Metalltreppe und historischer Bruchsteinmauer' },
+	{ src: '/speicher/IMG_9769.jpg', alt: 'Detail der Fachwerkfassade mit roten Holzbalken und weißem Putz' },
+	{ src: '/speicher/IMG_9771.jpg', alt: 'Heller Wohn-Schlafbereich mit Doppelbett und Arbeitsplatz' },
+	{ src: '/speicher/IMG_9772.jpg', alt: 'Modernes Badezimmer mit Waschbecken und großem Spiegel' },
+	{ src: '/speicher/IMG_9773.jpg', alt: 'Badezimmer mit ebenerdiger Dusche und WC' },
+	{ src: '/speicher/IMG_9774.jpg', alt: 'Geräumige Dusche mit Glaswand und Handbrause' },
+	{ src: '/speicher/IMG_9776.jpg', alt: 'Gemütlicher Schlafbereich mit Metallbett und beleuchteter Bruchsteinwand' },
+	{ src: '/speicher/IMG_9779.jpg', alt: 'Rustikale Bruchsteinwand mit LED-Beleuchtung und Holzbalken' },
+	{ src: '/speicher/IMG_9780.jpg', alt: 'Mobile Klimaanlage für angenehme Temperaturen im Sommer' },
+	{ src: '/speicher/IMG_9781.jpg', alt: 'Offener Wohnraum mit Bett, Küchenzeile und antikem Sessel' },
+	{ src: '/speicher/IMG_9794.jpg', alt: 'Straßenansicht der historischen Fachwerkhäuser in Auringen' },
 ];
+const images = gallery.map(g => g.src);
 ---
 
 <Layout title="Alter Speicher - Anno 1728">
@@ -28,11 +29,11 @@ const images = [
 	<div class="slideshow">
 		<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
 		<div class="slides-container">
-			{images.map((src, index) => (
+			{gallery.map((img, index) => (
 				<div class={`slide ${index === 0 ? 'active' : ''}`}>
 					<img
-						src={src}
-						alt={`Alter Speicher ${index + 1}`}
+						src={img.src}
+						alt={img.alt}
 						onclick={`openGalleryLightbox(${index})`}
 						style="cursor: pointer;"
 					/>

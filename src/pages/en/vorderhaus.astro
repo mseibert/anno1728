@@ -1,5 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Lightbox from '../../components/Lightbox.astro';
+
+const gallery = [
+	{ src: '/anno-1728-com-wiesbaden-auringen-40.webp', alt: 'Exterior view of the listed half-timbered house Anno 1728' },
+	{ src: '/gallery-01.jpg', alt: 'Cozy living room with historic ceiling beams and armchairs' },
+	{ src: '/gallery-02.jpg', alt: 'Window with sunflowers in traditional stoneware vase' },
+	{ src: '/gallery-03.jpg', alt: 'Spacious bathroom with antique wooden furniture and glass shower' },
+	{ src: '/gallery-04.jpg', alt: 'Open window with view of the half-timbered facade' },
+	{ src: '/gallery-05.jpg', alt: 'Award-winning half-timbered facade with red beams and white plaster' },
+	{ src: '/gallery-06.jpg', alt: 'Cozy seating area with armchairs and round table under ceiling beams' },
+	{ src: '/gallery-07.jpg', alt: 'Small bedroom with single bed and historic green door' },
+	{ src: '/gallery-08.jpg', alt: 'Entrance of the half-timbered house with white front door and stone steps' },
+	{ src: '/gallery-09.jpg', alt: 'Blue vanity table with folding mirror at sunny window' },
+	{ src: '/gallery-10.jpg', alt: 'Large bedroom with double bed, wooden floors and vanity table' },
+	{ src: '/gallery-11.jpg', alt: 'Living room with white ceiling beams and historic wood stove' },
+	{ src: '/gallery-12.jpg', alt: 'Historic steep wooden staircase with worn steps' },
+];
+const images = gallery.map(g => g.src);
 ---
 
 <Layout title="Main House - Anno 1728" lang="en">
@@ -12,49 +30,21 @@ import Layout from '../../layouts/Layout.astro';
 	<div class="slideshow">
 		<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
 		<div class="slides-container">
-			<div class="slide active">
-				<img src="/anno-1728-com-wiesbaden-auringen-40.webp" alt="Main House Anno 1728" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-01.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-02.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-03.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-04.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-05.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-06.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-07.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-08.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-09.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-10.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-11.jpg" alt="Anno 1728 Impression" />
-			</div>
-			<div class="slide">
-				<img src="/gallery-12.jpg" alt="Anno 1728 Impression" />
-			</div>
+			{gallery.map((img, index) => (
+				<div class={`slide ${index === 0 ? 'active' : ''}`}>
+					<img
+						src={img.src}
+						alt={img.alt}
+						onclick={`openGalleryLightbox(${index})`}
+						style="cursor: pointer;"
+					/>
+				</div>
+			))}
 		</div>
 		<button class="slide-arrow next" onclick="changeSlide(1)">&#10095;</button>
 		<span class="photo-credit">Photo: Horst Goebel</span>
-		<div class="slide-counter"><span id="currentSlide">1</span> / 13</div>
+		<div class="slide-counter"><span id="currentSlide">1</span> / {gallery.length}</div>
+		<div class="click-hint">Click for fullscreen</div>
 	</div>
 
 	<div class="intro-text">
@@ -99,6 +89,8 @@ import Layout from '../../layouts/Layout.astro';
 			<a href="/en/geschichte/" class="button secondary">More about the history</a>
 		</div>
 	</div>
+
+	<Lightbox />
 </Layout>
 
 <style>
@@ -210,6 +202,19 @@ import Layout from '../../layouts/Layout.astro';
 		position: absolute;
 		bottom: 12px;
 		left: 12px;
+		background: rgba(0, 0, 0, 0.6);
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		border-radius: 4px;
+		z-index: 10;
+	}
+
+	.click-hint {
+		position: absolute;
+		bottom: 12px;
+		left: 50%;
+		transform: translateX(-50%);
 		background: rgba(0, 0, 0, 0.6);
 		color: #fff;
 		font-size: 0.75rem;
@@ -340,7 +345,7 @@ import Layout from '../../layouts/Layout.astro';
 	}
 </style>
 
-<script>
+<script define:vars={{ images }}>
 	let currentIndex = 0;
 	const slides = document.querySelectorAll('.slide');
 	const totalSlides = slides.length;
@@ -358,5 +363,9 @@ import Layout from '../../layouts/Layout.astro';
 
 	window.changeSlide = function(direction) {
 		showSlide(currentIndex + direction);
+	}
+
+	window.openGalleryLightbox = function(index) {
+		window.openLightbox(images, index);
 	}
 </script>

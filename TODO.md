@@ -23,7 +23,7 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 - [x] **Sprachumschalter** - DE/EN Toggle im Header
 - [x] ~~**Social Media Links**~~ - Entfällt
 - [x] **Meta-Tags hinzufügen** - Description, Open Graph Tags in Layout.astro
-- [ ] **Alt-Texte verbessern** - Beschreibende Texte statt "Anno 1728 Impression"
+- [x] **Alt-Texte verbessern** - Beschreibende Texte für alle Galerie-Bilder (DE + EN)
 - [x] **Sitemap.xml** - Astro-Plugin `@astrojs/sitemap` eingebunden
 - [x] **Geschichte ergänzen** - Hinweis auf niedrige Deckenbalken (Vorsicht bei >1,75m)
 
@@ -54,7 +54,7 @@ https://fewoseibert.smoobu.net/en/apartment/AlterSpeicher/909940
 - [x] **Bilder optimieren** - JPEG-Format, in `/public/speicher/` abgelegt
 - [x] **Bildergalerie einbauen** - Wie beim Vorderhaus (Slideshow)
 - [x] **Lightbox hinzugefügt** - Vollbild-Ansicht für beide Galerien (Vorderhaus + Alter Speicher)
-- [ ] **Alt-Texte schreiben** - Beschreibende Texte für jedes Bild
+- [x] **Alt-Texte schreiben** - Beschreibende Texte für jedes Bild
 
 ### Benötigte Motive
 
@@ -315,10 +315,10 @@ FreeScout ist eine Open-Source-Helpdesk-Software (ähnlich wie Help Scout oder Z
 
 1. [ ] **Linux Server bereitstellen** - VPS oder eigener Server
 2. [ ] **FreeScout installieren** - https://freescout.net/download/
-3. [ ] **IMAP-Postfach einrichten** - Zugangsdaten aus 1Password
+3. [x] **IMAP-Postfach einrichten** - Zugangsdaten aus 1Password
 4. [ ] **Benutzer anlegen** - Wer soll Zugriff haben?
-5. [ ] **Mailbox konfigurieren** - `info@anno1728-ferienhaus-wiesbaden.de` anbinden
-6. [ ] **Testen** - Test-E-Mail senden und empfangen
+5. [x] **Mailbox konfiguriert** - `info@anno1728-ferienhaus-wiesbaden.de` angebunden
+6. [x] **Getestet** - Test-E-Mail senden und empfangen funktioniert
 
 ---
 

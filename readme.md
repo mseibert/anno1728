@@ -1,48 +1,101 @@
-# Astro Starter Kit: Basics
+# Anno 1728 - Ferienhaus Website
 
-```sh
-pnpm create astro@latest -- --template basics
+Website für das denkmalgeschützte Ferienhaus "Anno 1728" in Wiesbaden-Auringen.
+
+**Live:** [www.anno1728-ferienhaus-wiesbaden.de](https://www.anno1728-ferienhaus-wiesbaden.de)
+
+## Tech Stack
+
+- **Framework:** [Astro 5](https://astro.build/) mit Server-Side Rendering
+- **Hosting:** [Vercel](https://vercel.com/)
+- **Styling:** Vanilla CSS (kein Framework)
+- **E-Mail:** Nodemailer mit SMTP
+
+## Features
+
+- Zweisprachig (Deutsch/Englisch)
+- Responsive Design mit mobilem Hamburger-Menü
+- Kontaktformular mit E-Mail-Versand
+- Bildergalerien mit Lightbox
+- Blog mit 12 migrierten Artikeln
+- SEO-optimiert (Meta-Tags, Sitemap, hreflang)
+
+## Projektstruktur
+
+```
+src/
+├── components/       # Wiederverwendbare Komponenten
+│   └── ContactForm.astro
+├── i18n/            # Übersetzungen
+├── layouts/         # Seitenlayouts
+│   └── Layout.astro # Haupt-Layout mit Navigation
+├── pages/           # Seiten (DE)
+│   ├── api/         # Backend-Funktionen
+│   │   └── contact.ts
+│   ├── blog/        # Blog-Artikel
+│   └── en/          # Englische Seiten
+public/
+├── images/          # Statische Bilder
+├── speicher/        # Bilder Alter Speicher
+└── logo.png         # Logo
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Entwicklung
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Voraussetzungen
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- Node.js >= 20
+- pnpm
 
-## 🚀 Project Structure
+### Setup
 
-Inside of your Astro project, you'll see the following folders and files:
+```bash
+# Dependencies installieren
+pnpm install
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+# Entwicklungsserver starten (http://localhost:4321)
+pnpm dev
+
+# Produktions-Build
+pnpm build
+
+# Build lokal testen
+pnpm preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Environment Variables
 
-## 🧞 Commands
+Für das Kontaktformular werden folgende Umgebungsvariablen benötigt:
 
-All commands are run from the root of the project, from a terminal:
+| Variable | Beschreibung |
+|----------|--------------|
+| `SMTP_HOST` | SMTP-Server |
+| `SMTP_PORT` | SMTP-Port (587) |
+| `SMTP_USER` | E-Mail-Adresse |
+| `SMTP_PASS` | Passwort |
+| `CONTACT_EMAIL` | Empfänger-Adresse |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Lokal: `.env` Datei erstellen (siehe `.env.example`)
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Das Projekt wird automatisch auf Vercel deployed wenn Änderungen auf `main` gepusht werden.
+
+## Seiten
+
+| Seite | DE | EN |
+|-------|-----|-----|
+| Startseite | `/` | `/en/` |
+| Vorderhaus | `/vorderhaus/` | `/en/vorderhaus/` |
+| Alter Speicher | `/alter-speicher/` | `/en/alter-speicher/` |
+| Geschichte | `/geschichte/` | `/en/geschichte/` |
+| Ausflüge | `/ausfluege/` | `/en/ausfluege/` |
+| Essen | `/essen/` | `/en/essen/` |
+| Buchungen | `/buchungen/` | `/en/buchungen/` |
+| Blog | `/blog/` | `/blog/` |
+| Impressum | `/impressum/` | `/en/impressum/` |
+| Datenschutz | `/datenschutz/` | `/en/datenschutz/` |
+
+## Lizenz
+
+Privates Projekt - Alle Rechte vorbehalten.

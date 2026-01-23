@@ -2,21 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import Lightbox from '../components/Lightbox.astro';
 
-const images = [
-	'/anno-1728-com-wiesbaden-auringen-40.webp',
-	'/gallery-01.jpg',
-	'/gallery-02.jpg',
-	'/gallery-03.jpg',
-	'/gallery-04.jpg',
-	'/gallery-05.jpg',
-	'/gallery-06.jpg',
-	'/gallery-07.jpg',
-	'/gallery-08.jpg',
-	'/gallery-09.jpg',
-	'/gallery-10.jpg',
-	'/gallery-11.jpg',
-	'/gallery-12.jpg',
+const gallery = [
+	{ src: '/anno-1728-com-wiesbaden-auringen-40.webp', alt: 'Außenansicht des denkmalgeschützten Fachwerkhauses Anno 1728' },
+	{ src: '/gallery-01.jpg', alt: 'Gemütliches Wohnzimmer mit historischen Deckenbalken und Sesseln' },
+	{ src: '/gallery-02.jpg', alt: 'Fenster mit Sonnenblumen in traditioneller Steinzeugvase' },
+	{ src: '/gallery-03.jpg', alt: 'Großzügiges Badezimmer mit antiken Holzmöbeln und Glasdusche' },
+	{ src: '/gallery-04.jpg', alt: 'Geöffnetes Fenster mit Blick auf die Fachwerkfassade' },
+	{ src: '/gallery-05.jpg', alt: 'Preisgekrönte Fachwerkfassade mit rotem Gebälk und weißem Putz' },
+	{ src: '/gallery-06.jpg', alt: 'Gemütliche Sitzecke mit Sesseln und rundem Tisch unter Deckenbalken' },
+	{ src: '/gallery-07.jpg', alt: 'Kleines Schlafzimmer mit Einzelbett und historischer grüner Tür' },
+	{ src: '/gallery-08.jpg', alt: 'Eingang des Fachwerkhauses mit weißer Haustür und Steintreppe' },
+	{ src: '/gallery-09.jpg', alt: 'Blauer Schminktisch mit Klappspiegel am sonnigen Fenster' },
+	{ src: '/gallery-10.jpg', alt: 'Großes Schlafzimmer mit Doppelbett, Holzdielen und Schminktisch' },
+	{ src: '/gallery-11.jpg', alt: 'Wohnzimmer mit weißen Deckenbalken und historischem Kaminofen' },
+	{ src: '/gallery-12.jpg', alt: 'Historische steile Holztreppe mit abgenutzten Stufen' },
 ];
+const images = gallery.map(g => g.src);
 ---
 
 <Layout title="Vorderhaus - Anno 1728">
@@ -29,11 +30,11 @@ const images = [
 	<div class="slideshow">
 		<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
 		<div class="slides-container">
-			{images.map((src, index) => (
+			{gallery.map((img, index) => (
 				<div class={`slide ${index === 0 ? 'active' : ''}`}>
 					<img
-						src={src}
-						alt={`Vorderhaus ${index + 1}`}
+						src={img.src}
+						alt={img.alt}
 						onclick={`openGalleryLightbox(${index})`}
 						style="cursor: pointer;"
 					/>

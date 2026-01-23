@@ -2,9 +2,16 @@
 interface Props {
 	title?: string;
 	lang?: 'de' | 'en';
+	description?: string;
 }
 
-const { title = "Anno 1728", lang = 'de' } = Astro.props;
+const defaultDescription = {
+	de: 'Anno 1728 – Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen. Historisches Fachwerk, modern ausgestattet.',
+	en: 'Anno 1728 – Historic vacation home in Wiesbaden-Auringen. Half-timbered heritage, modern comfort.',
+};
+
+const { title = "Anno 1728", lang = 'de', description } = Astro.props;
+const metaDescription = description || defaultDescription[lang];
 
 const currentPath = Astro.url.pathname;
 const isEnglish = lang === 'en';
@@ -51,6 +58,17 @@ const basePath = isEnglish ? '/en' : '';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={metaDescription} />
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content={isEnglish ? 'en_US' : 'de_DE'} />
+		<meta property="og:site_name" content="Anno 1728" />
+		<!-- hreflang -->
+		<link rel="alternate" hreflang="de" href={`https://www.anno1728-ferienhaus-wiesbaden.de${isEnglish ? otherLangPath : currentPath}`} />
+		<link rel="alternate" hreflang="en" href={`https://www.anno1728-ferienhaus-wiesbaden.de${isEnglish ? currentPath : otherLangPath}`} />
+		<link rel="alternate" hreflang="x-default" href={`https://www.anno1728-ferienhaus-wiesbaden.de${isEnglish ? otherLangPath : currentPath}`} />
 		<title>{title}</title>
 	</head>
 	<body>
@@ -88,7 +106,7 @@ const basePath = isEnglish ? '/en' : '';
 		</main>
 		<footer>
 			<p>Anno 1728 · {isEnglish ? 'Historic vacation home in Wiesbaden-Auringen' : 'Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen'}</p>
-			<p>Familie Seibert · Tel: +49 160 6044181 · fewoseibert@seibert-media.net</p>
+			<p>Familie Seibert · Tel: +49 160 6044181 · <a href="mailto:info@anno1728-ferienhaus-wiesbaden.de">info@anno1728-ferienhaus-wiesbaden.de</a></p>
 			<p class="legal-links">
 				<a href={basePath + '/impressum/'}>{isEnglish ? 'Legal Notice' : 'Impressum'}</a> · <a href={basePath + '/datenschutz/'}>{isEnglish ? 'Privacy Policy' : 'Datenschutz'}</a>
 			</p>
@@ -225,6 +243,15 @@ const basePath = isEnglish ? '/en' : '';
 
 	footer p {
 		margin-bottom: 0.25rem;
+	}
+
+	footer a[href^="mailto:"] {
+		color: #8B2332;
+		text-decoration: none;
+	}
+
+	footer a[href^="mailto:"]:hover {
+		text-decoration: underline;
 	}
 
 	.legal-links {

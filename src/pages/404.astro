@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const isEnglish = Astro.url.pathname.startsWith('/en');
+const lang = isEnglish ? 'en' : 'de';
+const title = isEnglish ? '404 – Page Not Found' : '404 – Seite nicht gefunden';
+const homePath = isEnglish ? '/en/' : '/';
+---
+
+<Layout title={title} lang={lang}>
+	<div class="not-found">
+		<h1>404</h1>
+		<p class="subtitle">
+			{isEnglish ? 'This page could not be found.' : 'Diese Seite wurde nicht gefunden.'}
+		</p>
+		<p class="description">
+			{isEnglish
+				? 'The page you are looking for may have been moved or no longer exists.'
+				: 'Die Seite, die Sie suchen, wurde verschoben oder existiert nicht mehr.'}
+		</p>
+		<a href={homePath} class="home-link">
+			{isEnglish ? 'Back to Home' : 'Zur Startseite'}
+		</a>
+	</div>
+</Layout>
+
+<style>
+	.not-found {
+		text-align: center;
+		padding: 4rem 1rem;
+	}
+
+	h1 {
+		font-size: 5rem;
+		color: #8B2332;
+		margin-bottom: 0.5rem;
+		line-height: 1;
+	}
+
+	.subtitle {
+		font-size: 1.4rem;
+		color: #333;
+		margin-bottom: 1rem;
+	}
+
+	.description {
+		color: #666;
+		margin-bottom: 2rem;
+	}
+
+	.home-link {
+		display: inline-block;
+		background: #8B2332;
+		color: #fff;
+		padding: 0.75rem 1.5rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: background 0.2s;
+	}
+
+	.home-link:hover {
+		background: #6B1A26;
+	}
+</style>

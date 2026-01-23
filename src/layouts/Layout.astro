@@ -38,7 +38,8 @@ const nav = isEnglish ? {
 	ausfluege: 'Excursions',
 	essen: 'Dining',
 	buchungen: 'Bookings',
-	blog: 'Blog'
+	blog: 'Blog',
+	kontakt: 'Contact'
 } : {
 	home: 'Home',
 	vorderhaus: 'Vorderhaus',
@@ -47,7 +48,8 @@ const nav = isEnglish ? {
 	ausfluege: 'Ausflüge',
 	essen: 'Essen',
 	buchungen: 'Buchungen',
-	blog: 'Blog'
+	blog: 'Blog',
+	kontakt: 'Kontakt'
 };
 
 const basePath = isEnglish ? '/en' : '';
@@ -101,6 +103,7 @@ const basePath = isEnglish ? '/en' : '';
 					<a href={basePath + '/essen/'}>{nav.essen}</a>
 					<a href={basePath + '/buchungen/'}>{nav.buchungen}</a>
 					<a href="/blog/">{nav.blog}</a>
+					<a href={basePath + (isEnglish ? '/contact/' : '/kontakt/')}>{nav.kontakt}</a>
 				</nav>
 			</div>
 		</header>

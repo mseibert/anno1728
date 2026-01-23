@@ -16,7 +16,7 @@ const t = contactTranslations[lang];
     <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
   </div>
 
-  <div class="form-row">
+  <div class="form-row form-row-three">
     <div class="form-group">
       <label for="name">{t.name} <span class="required">*</span></label>
       <input type="text" name="name" id="name" required placeholder={t.namePlaceholder} />
@@ -25,14 +25,13 @@ const t = contactTranslations[lang];
       <label for="email">{t.email} <span class="required">*</span></label>
       <input type="email" name="email" id="email" required placeholder={t.emailPlaceholder} />
     </div>
+    <div class="form-group">
+      <label for="phone">{t.phone}</label>
+      <input type="tel" name="phone" id="phone" placeholder={t.phonePlaceholder} />
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="phone">{t.phone}</label>
-    <input type="tel" name="phone" id="phone" placeholder={t.phonePlaceholder} />
-  </div>
-
-  <fieldset class="form-group">
+  <fieldset class="form-group property-fieldset">
     <legend>{t.property}</legend>
     <div class="radio-group">
       <label class="radio-label">
@@ -138,7 +137,7 @@ const t = contactTranslations[lang];
 
 <style>
   .contact-form {
-    max-width: 600px;
+    width: 100%;
   }
 
   /* Honeypot - hidden from humans */
@@ -158,10 +157,20 @@ const t = contactTranslations[lang];
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
+    .form-row-three {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 500px) {
     .form-row,
     .form-row-three {
       grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+      flex-direction: column !important;
     }
   }
 
@@ -175,9 +184,15 @@ const t = contactTranslations[lang];
     margin: 0;
   }
 
+  .property-fieldset {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
   legend {
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: #333;
   }
 
@@ -205,6 +220,7 @@ const t = contactTranslations[lang];
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fff;
   }
 
   input:focus,
@@ -217,8 +233,9 @@ const t = contactTranslations[lang];
 
   .radio-group {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 
   .radio-label {
@@ -227,24 +244,28 @@ const t = contactTranslations[lang];
     gap: 0.5rem;
     font-weight: normal;
     cursor: pointer;
+    padding: 0.25rem 0;
   }
 
   .radio-label input[type="radio"] {
-    width: auto;
+    width: 18px;
+    height: 18px;
     margin: 0;
+    accent-color: #8B2332;
   }
 
   textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
   }
 
   .submit-btn {
     background: #8B2332;
     color: #fff;
     border: none;
-    padding: 0.85rem 2rem;
+    padding: 0.9rem 2.5rem;
     font-size: 1rem;
+    font-weight: 500;
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.2s;
@@ -260,7 +281,7 @@ const t = contactTranslations[lang];
   }
 
   .form-status {
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
     display: none;

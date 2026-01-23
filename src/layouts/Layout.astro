@@ -31,25 +31,23 @@ const otherLangPath = getOtherLangPath();
 
 // Navigation labels
 const nav = isEnglish ? {
-	home: 'Home',
 	vorderhaus: 'Main House',
 	alterSpeicher: 'Old Granary',
+	erleben: 'Experience',
 	geschichte: 'History',
 	ausfluege: 'Excursions',
 	essen: 'Dining',
-	buchungen: 'Bookings',
 	blog: 'Blog',
-	kontakt: 'Contact'
+	buchungen: 'Bookings'
 } : {
-	home: 'Home',
 	vorderhaus: 'Vorderhaus',
 	alterSpeicher: 'Alter Speicher',
+	erleben: 'Erleben',
 	geschichte: 'Geschichte',
 	ausfluege: 'Ausflüge',
 	essen: 'Essen',
-	buchungen: 'Buchungen',
 	blog: 'Blog',
-	kontakt: 'Kontakt'
+	buchungen: 'Buchungen'
 };
 
 const basePath = isEnglish ? '/en' : '';
@@ -95,15 +93,20 @@ const basePath = isEnglish ? '/en' : '';
 					</div>
 				</div>
 				<nav>
-					<a href={basePath + '/'}>{nav.home}</a>
 					<a href={basePath + '/vorderhaus/'}>{nav.vorderhaus}</a>
 					<a href={basePath + '/alter-speicher/'}>{nav.alterSpeicher}</a>
-					<a href={basePath + '/geschichte/'}>{nav.geschichte}</a>
-					<a href={basePath + '/ausfluege/'}>{nav.ausfluege}</a>
-					<a href={basePath + '/essen/'}>{nav.essen}</a>
+					<div class="dropdown">
+						<button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+							{nav.erleben} <span class="dropdown-arrow">▾</span>
+						</button>
+						<div class="dropdown-menu">
+							<a href={basePath + '/geschichte/'}>{nav.geschichte}</a>
+							<a href={basePath + '/ausfluege/'}>{nav.ausfluege}</a>
+							<a href={basePath + '/essen/'}>{nav.essen}</a>
+							<a href="/blog/">{nav.blog}</a>
+						</div>
+					</div>
 					<a href={basePath + '/buchungen/'}>{nav.buchungen}</a>
-					<a href="/blog/">{nav.blog}</a>
-					<a href={basePath + (isEnglish ? '/contact/' : '/kontakt/')}>{nav.kontakt}</a>
 				</nav>
 			</div>
 		</header>
@@ -210,6 +213,7 @@ const basePath = isEnglish ? '/en' : '';
 	nav {
 		margin-top: 1rem;
 		display: flex;
+		align-items: center;
 		gap: 0.25rem;
 		flex-wrap: wrap;
 	}
@@ -226,6 +230,74 @@ const basePath = isEnglish ? '/en' : '';
 	nav a:hover {
 		background: rgba(255, 255, 255, 0.15);
 		color: #fff;
+	}
+
+	/* Dropdown */
+	.dropdown {
+		position: relative;
+	}
+
+	.dropdown-toggle {
+		background: none;
+		border: none;
+		color: rgba(255, 255, 255, 0.9);
+		padding: 0.5rem 1rem;
+		border-radius: 3px;
+		font-size: 0.95rem;
+		font-family: inherit;
+		cursor: pointer;
+		transition: background 0.2s;
+		display: flex;
+		align-items: center;
+		gap: 0.3rem;
+	}
+
+	.dropdown-toggle:hover {
+		background: rgba(255, 255, 255, 0.15);
+		color: #fff;
+	}
+
+	.dropdown-arrow {
+		font-size: 0.75rem;
+		transition: transform 0.2s;
+	}
+
+	.dropdown-menu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background: #6B1A26;
+		border-radius: 4px;
+		min-width: 160px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-8px);
+		transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+		z-index: 100;
+		padding: 0.5rem 0;
+	}
+
+	.dropdown-menu a {
+		display: block;
+		padding: 0.6rem 1rem;
+		border-radius: 0;
+	}
+
+	.dropdown-menu a:hover {
+		background: rgba(255, 255, 255, 0.15);
+	}
+
+	/* Show dropdown on hover (desktop) */
+	.dropdown:hover .dropdown-menu,
+	.dropdown:focus-within .dropdown-menu {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	.dropdown:hover .dropdown-arrow {
+		transform: rotate(180deg);
 	}
 
 	/* Main */
@@ -292,5 +364,54 @@ const basePath = isEnglish ? '/en' : '';
 			padding: 0.4rem 0.7rem;
 			font-size: 0.9rem;
 		}
+
+		.dropdown-toggle {
+			padding: 0.4rem 0.7rem;
+			font-size: 0.9rem;
+		}
+
+		.dropdown-menu {
+			min-width: 140px;
+		}
+
+		.dropdown-menu a {
+			padding: 0.5rem 0.7rem;
+			font-size: 0.9rem;
+		}
+	}
+</style>
+
+<script>
+	// Mobile touch support for dropdown
+	document.addEventListener('DOMContentLoaded', () => {
+		const dropdown = document.querySelector('.dropdown');
+		const toggle = document.querySelector('.dropdown-toggle');
+
+		if (toggle && dropdown) {
+			toggle.addEventListener('click', (e) => {
+				e.preventDefault();
+				dropdown.classList.toggle('is-open');
+			});
+
+			// Close when clicking outside
+			document.addEventListener('click', (e) => {
+				if (!dropdown.contains(e.target as Node)) {
+					dropdown.classList.remove('is-open');
+				}
+			});
+		}
+	});
+</script>
+
+<style>
+	/* Mobile click/tap support */
+	.dropdown.is-open .dropdown-menu {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	.dropdown.is-open .dropdown-arrow {
+		transform: rotate(180deg);
 	}
 </style>

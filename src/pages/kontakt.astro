@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Kontakt - Anno 1728">
+  <h1>Kontakt</h1>
+  <p class="intro">
+    Haben Sie Fragen zu unseren Ferienwohnungen oder möchten Sie eine Buchungsanfrage stellen?
+    Füllen Sie einfach das Formular aus und wir melden uns schnellstmöglich bei Ihnen.
+  </p>
+
+  <ContactForm lang="de" />
+
+  <section class="alternative-contact">
+    <h2>Oder kontaktieren Sie uns direkt</h2>
+    <p>
+      <strong>E-Mail:</strong> <a href="mailto:info@anno1728-ferienhaus-wiesbaden.de">info@anno1728-ferienhaus-wiesbaden.de</a><br />
+      <strong>Telefon:</strong> <a href="tel:+491606044181">+49 160 6044181</a>
+    </p>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .intro {
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+
+  .alternative-contact {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  .alternative-contact h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .alternative-contact a {
+    color: #8B2332;
+  }
+</style>

@@ -10,21 +10,21 @@ Diese Todoliste dokumentiert alle offenen Aufgaben für die Website anno-1728.de
 - [x] **Impressum erstellen** - Pflicht für deutsche Websites (Name, Adresse, Kontakt, ggf. Steuernummer)
 - [x] **Datenschutz erstellen** - Pflicht nach DSGVO
 - [x] **Englische Version** - Alle Seiten auf Englisch übersetzen (siehe Abschnitt unten)
-- [ ] **12 Blog-Artikel migrieren** - Von anno-1728.de übernehmen (siehe Abschnitt unten)
+- [x] **12 Blog-Artikel migrieren** - Von anno-1728.de übernommen
 - [x] **Favicon erstellen** - Eigenes Icon statt Astro-Standard
 - [x] **Impressionen-Seite** - Bildergalerie mit ~25 Fotos von der alten Website
-- [ ] **Kontaktformular mit E-Mail** - Vercel Functions Lernprojekt (siehe Abschnitt unten)
-- [ ] **E-Mail-Adresse auf Website anzeigen** - `info@anno1728-ferienhaus-wiesbaden.de` als Kontaktadresse
+- [x] **Kontaktformular mit E-Mail** - Implementiert mit Nodemailer/SMTP (siehe Abschnitt unten)
+- [x] **E-Mail-Adresse auf Website anzeigen** - `info@anno1728-ferienhaus-wiesbaden.de` auf Kontaktseite
 
 ---
 
 ## Wichtig (SEO & Qualität)
 
 - [x] **Sprachumschalter** - DE/EN Toggle im Header
-- [ ] **Social Media Links** - Facebook, Instagram, LinkedIn im Footer
-- [ ] **Meta-Tags hinzufügen** - Description, Open Graph Tags in Layout.astro
+- [x] ~~**Social Media Links**~~ - Entfällt
+- [x] **Meta-Tags hinzufügen** - Description, Open Graph Tags in Layout.astro
 - [ ] **Alt-Texte verbessern** - Beschreibende Texte statt "Anno 1728 Impression"
-- [ ] **Sitemap.xml** - Astro-Plugin `@astrojs/sitemap` verwenden
+- [x] **Sitemap.xml** - Astro-Plugin `@astrojs/sitemap` eingebunden
 - [x] **Geschichte ergänzen** - Hinweis auf niedrige Deckenbalken (Vorsicht bei >1,75m)
 
 ---
@@ -50,9 +50,10 @@ https://fewoseibert.smoobu.net/en/apartment/AlterSpeicher/909940
 
 ### Aufgaben
 
-- [ ] **Bilder von Smoobu herunterladen** - Siehe Link oben
-- [x] **Bilder optimieren** - WebP-Format, komprimieren
+- [x] **Bilder bereitgestellt** - 13 HEIF-Bilder aus ZIP-Datei nach JPEG konvertiert
+- [x] **Bilder optimieren** - JPEG-Format, in `/public/speicher/` abgelegt
 - [x] **Bildergalerie einbauen** - Wie beim Vorderhaus (Slideshow)
+- [x] **Lightbox hinzugefügt** - Vollbild-Ansicht für beide Galerien (Vorderhaus + Alter Speicher)
 - [ ] **Alt-Texte schreiben** - Beschreibende Texte für jedes Bild
 
 ### Benötigte Motive
@@ -108,8 +109,8 @@ src/pages/
 ### Zusätzlich benötigt
 
 - [x] Sprachumschalter im Header
-- [ ] hreflang-Tags für SEO
-- [ ] Layout.astro mit dynamischem `lang` Attribut
+- [x] hreflang-Tags für SEO
+- [x] Layout.astro mit dynamischem `lang` Attribut
 
 ---
 
@@ -143,9 +144,9 @@ src/pages/
 
 ---
 
-## Lernprojekt: Kontaktformular mit Vercel Backend Function
+## ✅ Lernprojekt: Kontaktformular mit Vercel Backend Function (ERLEDIGT)
 
-> **Hinweis:** Dieses Projekt wird gemeinsam mit Helene umgesetzt. Sie entscheidet, welche Felder im Formular abgefragt werden.
+> **Status:** Fertiggestellt am Januar 2025. Kontaktformular funktioniert mit SMTP/Nodemailer.
 
 ### Was ist eine Vercel Backend Function?
 
@@ -191,72 +192,62 @@ Eine **Vercel Backend Function** (auch "Serverless Function" genannt) ist Code, 
 - **E-Mail:** Transactional Email Services (Resend)
 - **Security:** Umgang mit API-Keys, Eingabevalidierung
 
-### Formularfelder
+### Formularfelder (Implementiert)
 
-**Entscheidung durch Helene:** Welche Felder sollen abgefragt werden?
+Implementierte Felder:
+- [x] Name
+- [x] E-Mail-Adresse
+- [x] Telefonnummer
+- [x] Gewünschtes Objekt (Vorderhaus / Alter Speicher)
+- [x] Anreise-Datum
+- [x] Abreise-Datum
+- [x] Anzahl Erwachsene
+- [x] Anzahl Kinder
+- [x] Nachricht
 
-Mögliche Felder:
-- [ ] Name
-- [ ] E-Mail-Adresse
-- [ ] Telefonnummer
-- [ ] Gewünschtes Objekt (Vorderhaus / Alter Speicher)
-- [ ] Check-in Datum
-- [ ] Check-out Datum
-- [ ] Anzahl Personen
-- [ ] Nachricht / Bemerkungen
+### Setup-Schritte (Erledigt)
 
-### Setup-Schritte (gemeinsam umsetzen)
+1. [x] **Formularfelder festgelegt** - Vollständiges Buchungsanfrage-Formular
+2. [x] **SMTP statt Resend** - Bestehendes E-Mail-Konto mit Nodemailer genutzt
+3. [x] **Packages installiert** - `pnpm add @astrojs/vercel nodemailer`
+4. [x] **Astro konfiguriert** - `output: 'server'` in `astro.config.mjs`
+5. [x] **Backend Function erstellt** - `src/pages/api/contact.ts`
+6. [x] **Kontaktformular gebaut** - `src/components/ContactForm.astro`
+7. [x] **Lokal getestet** - Funktioniert
+8. [x] **Vercel konfiguriert** - SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_EMAIL
+9. [x] **Deployed und getestet** - Live auf Vercel
 
-1. [ ] **Formularfelder festlegen** - Helene entscheidet
-2. [ ] **Resend Account erstellen** - https://resend.com (kostenlos bis 3.000 E-Mails/Monat)
-3. [ ] **API Key generieren** - In Resend Dashboard
-4. [ ] **Packages installieren** - `pnpm add @astrojs/vercel resend`
-5. [ ] **Astro konfigurieren** - `output: 'server'` in `astro.config.mjs`
-6. [ ] **Backend Function erstellen** - `src/pages/api/contact.ts`
-7. [ ] **Kontaktformular bauen** - `src/pages/kontakt.astro`
-8. [ ] **Lokal testen** - `pnpm dev`
-9. [ ] **Vercel konfigurieren** - Environment Variable `RESEND_API_KEY` setzen
-10. [ ] **Deployen und testen**
+### Technische Referenz: API Route (Implementiert)
 
-### Technische Referenz: API Route
+**Umgesetzt mit Nodemailer/SMTP statt Resend** - verwendet das bestehende E-Mail-Konto.
 
 ```typescript
 // src/pages/api/contact.ts
 import type { APIRoute } from 'astro';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: import.meta.env.SMTP_HOST,  // mail11.web-server.biz
+  port: Number(import.meta.env.SMTP_PORT),
+  secure: false,
+  auth: {
+    user: import.meta.env.SMTP_USER,
+    pass: import.meta.env.SMTP_PASS,
+  },
+});
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.json();
-  // Felder je nach Helenes Entscheidung anpassen
-  const { name, email, message } = data;
-
-  // Validierung
-  if (!name || !email || !message) {
-    return new Response(
-      JSON.stringify({ error: 'Bitte alle Pflichtfelder ausfüllen' }),
-      { status: 400 }
-    );
-  }
-
-  // E-Mail versenden
-  await resend.emails.send({
-    from: 'Anno 1728 <info@anno1728-ferienhaus-wiesbaden.de>',
-    to: 'info@anno1728-ferienhaus-wiesbaden.de',
-    subject: `Neue Anfrage von ${name}`,
-    html: `
-      <h2>Neue Kontaktanfrage</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>E-Mail:</strong> ${email}</p>
-      <p><strong>Nachricht:</strong></p>
-      <p>${message}</p>
-    `,
-  });
-
-  return new Response(JSON.stringify({ success: true }), { status: 200 });
+  // ... Validierung und E-Mail-Versand
 };
 ```
+
+**Environment Variables (Vercel):**
+- `SMTP_HOST` - mail11.web-server.biz
+- `SMTP_PORT` - 587
+- `SMTP_USER` - info@anno1728-ferienhaus-wiesbaden.de
+- `SMTP_PASS` - (aus 1Password)
+- `CONTACT_EMAIL` - info@anno1728-ferienhaus-wiesbaden.de
 
 ---
 

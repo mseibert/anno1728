@@ -134,9 +134,19 @@ ${lang === 'en' ? 'Sent via contact form on anno-1728.de' : 'Gesendet über das 
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('Contact form error:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('Contact form error:', errorMessage);
+    console.error('SMTP Config:', {
+      host: import.meta.env.SMTP_HOST,
+      port: import.meta.env.SMTP_PORT,
+      user: import.meta.env.SMTP_USER ? '***set***' : '***missing***',
+      pass: import.meta.env.SMTP_PASS ? '***set***' : '***missing***',
+    });
     return new Response(
-      JSON.stringify({ error: 'Server error. Please try again later.' }),
+      JSON.stringify({
+        error: 'Server error. Please try again later.',
+        debug: errorMessage
+      }),
       {
         status: 500,
         headers: { 'Content-Type': 'application/json' },

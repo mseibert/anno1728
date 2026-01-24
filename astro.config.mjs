@@ -8,5 +8,7 @@ export default defineConfig({
   site: 'https://www.anno1728-ferienhaus-wiesbaden.de',
   output: 'server',
   integrations: [sitemap()],
-  adapter: vercel()
+  adapter: vercel({
+    imageService: true
+  })
 });

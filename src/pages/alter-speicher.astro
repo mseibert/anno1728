@@ -49,6 +49,7 @@ const images = gallery.map(g => g.image.src);
 					<Image
 						src={img.image}
 						alt={img.alt}
+						loading="eager"
 						onclick={`openGalleryLightbox(${index})`}
 						style="cursor: pointer;"
 					/>

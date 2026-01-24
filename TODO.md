@@ -8,10 +8,10 @@
 
 Bilder liegen aktuell in `/public/` und werden nicht optimiert. Astro kann automatisch komprimieren (WebP/AVIF).
 
-- [ ] Bilder nach `src/assets/` verschieben
-- [ ] Astro `<Image>` Komponente nutzen
-- [ ] Responsive Bilder (`srcset`)
-- [ ] Lazy Loading
+- [x] Bilder nach `src/assets/` verschieben
+- [x] Astro `<Image>` Komponente nutzen
+- [x] Responsive Bilder (`srcset`)
+- [x] Lazy Loading
 
 ### FreeScout Helpdesk (Optional)
 

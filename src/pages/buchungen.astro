@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
+import heroImg from '../assets/images/anno-1728-com-wiesbaden-auringen-141.webp';
 ---
 
 <Layout title="Buchungen - Anno 1728">
@@ -10,7 +12,7 @@ import ContactForm from '../components/ContactForm.astro';
 	</div>
 
 	<div class="hero-image">
-		<img src="/anno-1728-com-wiesbaden-auringen-141.webp" alt="Anno 1728 Ferienhaus" />
+		<Image src={heroImg} alt="Anno 1728 Ferienhaus" />
 		<span class="photo-credit">Foto: Horst Goebel</span>
 	</div>
 

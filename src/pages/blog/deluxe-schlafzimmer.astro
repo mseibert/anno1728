@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/deluxe-schlafzimmer-featured.jpg';
 ---
 
 <Layout title="Deluxe Traumfabrik - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">12. September 2017 · Foto: Horst Goebel</p>
 		</div>
 
-		<img src="/images/blog/deluxe-schlafzimmer-featured.jpg" alt="Großes Schlafzimmer mit King-Size-Bett" class="hero-image" />
+		<Image src={heroImg} alt="Großes Schlafzimmer mit King-Size-Bett" class="hero-image" />
 
 		<div class="article-content">
 			<p>Schlafmütze oder Frühaufsteher? Kein Problem, in unserem großen Schlafzimmer kommen beide gleichermaßen auf Ihre Kosten. Das hiesige King-Size-Bett lässt das Herz eines Langschläfers höher schlagen. Und für die Frühaufsteher erstrahlt das Zimmer schon in den frühen Morgenstunden im vollen Glanze und erfüllt den Raum mit Wärme.</p>

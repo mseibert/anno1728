@@ -1,5 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/entspannung-04.jpg';
+import img01 from '../../assets/images/blog/entspannung-01.jpg';
+import img02 from '../../assets/images/blog/entspannung-02.jpg';
+import img03 from '../../assets/images/blog/entspannung-03.jpg';
+import img04 from '../../assets/images/blog/entspannung-04.jpg';
+import img05 from '../../assets/images/blog/entspannung-05.jpg';
 ---
 
 <Layout title="Übernachtung und Entspannen - Anno 1728">
@@ -9,7 +16,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">28. August 2017</p>
 		</div>
 
-		<img src="/images/blog/entspannung-04.jpg" alt="Gemütliche Sitzecke vor dem Fachwerkhaus" class="hero-image" />
+		<Image src={heroImg} alt="Gemütliche Sitzecke vor dem Fachwerkhaus" class="hero-image" />
 
 		<div class="article-content">
 			<p>Seit kurzem bieten wir unseren Gästen einen Platz an der Sonne in Wiesbaden-Auringen!</p>
@@ -18,11 +25,11 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 
 		<div class="image-gallery">
-			<img src="/images/blog/entspannung-01.jpg" alt="Unsere neue Sitzbank" />
-			<img src="/images/blog/entspannung-02.jpg" alt="Nehmen Sie Platz!" />
-			<img src="/images/blog/entspannung-03.jpg" alt="Auf halbem Weg zwischen Feriendomizil und Waschmaschine" />
-			<img src="/images/blog/entspannung-04.jpg" alt="Gut gepolstert für ein komfortables und entspanntes Gespräch" />
-			<img src="/images/blog/entspannung-05.jpg" alt="Genießen Sie die Sonne!" />
+			<Image src={img01} alt="Unsere neue Sitzbank" />
+			<Image src={img02} alt="Nehmen Sie Platz!" />
+			<Image src={img03} alt="Auf halbem Weg zwischen Feriendomizil und Waschmaschine" />
+			<Image src={img04} alt="Gut gepolstert für ein komfortables und entspanntes Gespräch" />
+			<Image src={img05} alt="Genießen Sie die Sonne!" />
 		</div>
 
 		<a href="/blog/" class="back-link">Zurück zum Blog</a>

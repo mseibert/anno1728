@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/wiesbaden-featured.jpg';
 ---
 
 <Layout title="Wiesbaden zu Fuß oder mit dem Fahrrad - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">20. August 2017 · Foto: Horst Goebel</p>
 		</div>
 
-		<img src="/images/blog/wiesbaden-featured.jpg" alt="Blick auf Wiesbaden" class="hero-image" />
+		<Image src={heroImg} alt="Blick auf Wiesbaden" class="hero-image" />
 
 		<div class="article-content">
 			<p>Wiesbaden ist Teil des Rhein-Main-Gebiets und bietet sowohl kulinarisch als auch kulturell ein reichhaltiges Angebot. Für unsere Gäste haben wir hier ein Beispiel für einen Ein-Tages-Ausflug mit dem Bus oder dem Fahrrad (ohne Auto). Wir starten morgens am Dernschen Gelände. Die Haltestelle ist sowohl vom Hauptbahnhof als auch von unserem Ferienhaus in Wiesbaden-Auringen mit dem Bus leicht erreichbar.</p>

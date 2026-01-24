@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/bergsteiger-featured.jpg';
 ---
 
 <Layout title="Bergsteiger aufgepasst! - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">2. September 2017 · Foto: Horst Goebel</p>
 		</div>
 
-		<img src="/images/blog/bergsteiger-featured.jpg" alt="Die bauzeitliche Treppe im Fachwerkhaus" class="hero-image" />
+		<Image src={heroImg} alt="Die bauzeitliche Treppe im Fachwerkhaus" class="hero-image" />
 
 		<div class="article-content">
 			<p>Wer vor hat in naher Zukunft einen Berg zu besteigen und noch trainieren möchte, der hat bei uns die Chance, dies zu üben, denn unsere Treppe ist was für Abenteuerlustige oder jene die es noch werden wollen. Hat man sie jedoch einmal bezwungen, läuft es wie am Schnürchen.</p>

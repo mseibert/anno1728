@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/oldies-featured.jpg';
 ---
 
 <Layout title="Oldies - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">8. August 2017</p>
 		</div>
 
-		<img src="/images/blog/oldies-featured.jpg" alt="Historisches Detail im Fachwerkhaus" class="hero-image" />
+		<Image src={heroImg} alt="Historisches Detail im Fachwerkhaus" class="hero-image" />
 
 		<div class="article-content">
 			<p>In unserem wundervollen Haus versteckt sich ein echter Oldie. Wenn ihr neugierig geworden seid, wo genau sich dieser Schatz befindet und welche Geschichte dahinter steckt, dann klickt unser Video an.</p>

@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/liegestuehle-01.jpg';
 ---
 
 <Layout title="Ein Platz an der Sonne - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">26. März 2019</p>
 		</div>
 
-		<img src="/images/blog/liegestuehle-01.jpg" alt="Neue Liegestühle im Hof des Ferienhauses Anno 1728" class="hero-image" />
+		<Image src={heroImg} alt="Neue Liegestühle im Hof des Ferienhauses Anno 1728" class="hero-image" />
 
 		<div class="article-content">
 			<p>Draußen wird es langsam wärmer, die Sonne scheint intensiver und länger. Man möchte sich draußen aufhalten und die ersten Sonnenstrahlen genießen. Pünktlich zu Beginn des Frühlings warten neue Liegestühle auf Sie!</p>

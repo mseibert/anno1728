@@ -1,23 +1,37 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Lightbox from '../components/Lightbox.astro';
+import img00 from '../assets/images/anno-1728-com-wiesbaden-auringen-40.webp';
+import img01 from '../assets/images/gallery/gallery-01.jpg';
+import img02 from '../assets/images/gallery/gallery-02.jpg';
+import img03 from '../assets/images/gallery/gallery-03.jpg';
+import img04 from '../assets/images/gallery/gallery-04.jpg';
+import img05 from '../assets/images/gallery/gallery-05.jpg';
+import img06 from '../assets/images/gallery/gallery-06.jpg';
+import img07 from '../assets/images/gallery/gallery-07.jpg';
+import img08 from '../assets/images/gallery/gallery-08.jpg';
+import img09 from '../assets/images/gallery/gallery-09.jpg';
+import img10 from '../assets/images/gallery/gallery-10.jpg';
+import img11 from '../assets/images/gallery/gallery-11.jpg';
+import img12 from '../assets/images/gallery/gallery-12.jpg';
 
 const gallery = [
-	{ src: '/anno-1728-com-wiesbaden-auringen-40.webp', alt: 'Außenansicht des denkmalgeschützten Fachwerkhauses Anno 1728' },
-	{ src: '/gallery-01.jpg', alt: 'Gemütliches Wohnzimmer mit historischen Deckenbalken und Sesseln' },
-	{ src: '/gallery-02.jpg', alt: 'Fenster mit Sonnenblumen in traditioneller Steinzeugvase' },
-	{ src: '/gallery-03.jpg', alt: 'Großzügiges Badezimmer mit antiken Holzmöbeln und Glasdusche' },
-	{ src: '/gallery-04.jpg', alt: 'Geöffnetes Fenster mit Blick auf die Fachwerkfassade' },
-	{ src: '/gallery-05.jpg', alt: 'Preisgekrönte Fachwerkfassade mit rotem Gebälk und weißem Putz' },
-	{ src: '/gallery-06.jpg', alt: 'Gemütliche Sitzecke mit Sesseln und rundem Tisch unter Deckenbalken' },
-	{ src: '/gallery-07.jpg', alt: 'Kleines Schlafzimmer mit Einzelbett und historischer grüner Tür' },
-	{ src: '/gallery-08.jpg', alt: 'Eingang des Fachwerkhauses mit weißer Haustür und Steintreppe' },
-	{ src: '/gallery-09.jpg', alt: 'Blauer Schminktisch mit Klappspiegel am sonnigen Fenster' },
-	{ src: '/gallery-10.jpg', alt: 'Großes Schlafzimmer mit Doppelbett, Holzdielen und Schminktisch' },
-	{ src: '/gallery-11.jpg', alt: 'Wohnzimmer mit weißen Deckenbalken und historischem Kaminofen' },
-	{ src: '/gallery-12.jpg', alt: 'Historische steile Holztreppe mit abgenutzten Stufen' },
+	{ image: img00, alt: 'Außenansicht des denkmalgeschützten Fachwerkhauses Anno 1728' },
+	{ image: img01, alt: 'Gemütliches Wohnzimmer mit historischen Deckenbalken und Sesseln' },
+	{ image: img02, alt: 'Fenster mit Sonnenblumen in traditioneller Steinzeugvase' },
+	{ image: img03, alt: 'Großzügiges Badezimmer mit antiken Holzmöbeln und Glasdusche' },
+	{ image: img04, alt: 'Geöffnetes Fenster mit Blick auf die Fachwerkfassade' },
+	{ image: img05, alt: 'Preisgekrönte Fachwerkfassade mit rotem Gebälk und weißem Putz' },
+	{ image: img06, alt: 'Gemütliche Sitzecke mit Sesseln und rundem Tisch unter Deckenbalken' },
+	{ image: img07, alt: 'Kleines Schlafzimmer mit Einzelbett und historischer grüner Tür' },
+	{ image: img08, alt: 'Eingang des Fachwerkhauses mit weißer Haustür und Steintreppe' },
+	{ image: img09, alt: 'Blauer Schminktisch mit Klappspiegel am sonnigen Fenster' },
+	{ image: img10, alt: 'Großes Schlafzimmer mit Doppelbett, Holzdielen und Schminktisch' },
+	{ image: img11, alt: 'Wohnzimmer mit weißen Deckenbalken und historischem Kaminofen' },
+	{ image: img12, alt: 'Historische steile Holztreppe mit abgenutzten Stufen' },
 ];
-const images = gallery.map(g => g.src);
+const images = gallery.map(g => g.image.src);
 ---
 
 <Layout title="Vorderhaus - Anno 1728">
@@ -32,8 +46,8 @@ const images = gallery.map(g => g.src);
 		<div class="slides-container">
 			{gallery.map((img, index) => (
 				<div class={`slide ${index === 0 ? 'active' : ''}`}>
-					<img
-						src={img.src}
+					<Image
+						src={img.image}
 						alt={img.alt}
 						onclick={`openGalleryLightbox(${index})`}
 						style="cursor: pointer;"

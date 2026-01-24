@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import alterSpeicherImg from '../../assets/images/alter-speicher.jpg';
 ---
 
 <Layout title="Old Granary - Anno 1728" lang="en">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 	</div>
 
 	<div class="hero-image">
-		<img src="/alter-speicher.jpg" alt="Old Granary" />
+		<Image src={alterSpeicherImg} alt="Old Granary" />
 	</div>
 
 	<div class="intro-text">

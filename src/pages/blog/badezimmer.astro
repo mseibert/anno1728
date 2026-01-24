@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/badezimmer-featured.jpg';
 ---
 
 <Layout title="Großes Badezimmer - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">23. August 2017</p>
 		</div>
 
-		<img src="/images/blog/badezimmer-featured.jpg" alt="Das lichtdurchflutete Badezimmer" class="hero-image" />
+		<Image src={heroImg} alt="Das lichtdurchflutete Badezimmer" class="hero-image" />
 
 		<div class="article-content">
 			<p>In unserer kleinen Wellnessoase können Sie sich bei einer heißen Dusche eine kurze Auszeit gönnen. Das lichtdurchflutete Bad bietet neben einer geräumigen Dusche, einem Waschbecken und einer Toilette eine tolle Aussicht in den Innenhof.</p>

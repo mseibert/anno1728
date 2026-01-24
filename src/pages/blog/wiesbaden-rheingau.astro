@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/wiesbaden-rheingau-featured.jpg';
 ---
 
 <Layout title="Wiesbaden und Rheingau in 2 Tagen - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">10. Juli 2017</p>
 		</div>
 
-		<img src="/images/blog/wiesbaden-rheingau-featured.jpg" alt="Blick über Wiesbaden und den Rheingau" class="hero-image" />
+		<Image src={heroImg} alt="Blick über Wiesbaden und den Rheingau" class="hero-image" />
 
 		<div class="article-content">
 			<h2>Tag 1 – Wiesbaden ohne Auto</h2>

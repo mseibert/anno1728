@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import vorderhausImg from '../assets/images/anno-1728-com-wiesbaden-auringen-40.webp';
+import alterSpeicherImg from '../assets/images/alter-speicher.jpg';
 ---
 
 <Layout title="Anno 1728 - Denkmalgeschütztes Ferienhaus in Wiesbaden-Auringen">
@@ -23,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
 	<div class="cards">
 		<a href="/vorderhaus/" class="card">
 			<div class="card-image">
-				<img src="/anno-1728-com-wiesbaden-auringen-40.webp" alt="Vorderhaus" />
+				<Image src={vorderhausImg} alt="Vorderhaus" />
 				<span class="photo-credit">Foto: Horst Goebel</span>
 			</div>
 			<div class="card-content">
@@ -34,7 +37,7 @@ import Layout from '../layouts/Layout.astro';
 		</a>
 		<a href="/alter-speicher/" class="card">
 			<div class="card-image">
-				<img src="/alter-speicher.jpg" alt="Alter Speicher" />
+				<Image src={alterSpeicherImg} alt="Alter Speicher" />
 			</div>
 			<div class="card-content">
 				<h3>Alter Speicher</h3>

@@ -1,5 +1,16 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/hochzeit-04.jpg';
+import img01 from '../../assets/images/blog/hochzeit-01.jpg';
+import img02 from '../../assets/images/blog/hochzeit-02.jpg';
+import img03 from '../../assets/images/blog/hochzeit-03.jpg';
+import img04 from '../../assets/images/blog/hochzeit-04.jpg';
+import img05 from '../../assets/images/blog/hochzeit-05.jpg';
+import img06 from '../../assets/images/blog/hochzeit-06.jpg';
+import img07 from '../../assets/images/blog/hochzeit-07.jpg';
+import img08 from '../../assets/images/blog/hochzeit-08.jpg';
+import img09 from '../../assets/images/blog/hochzeit-09.jpg';
 ---
 
 <Layout title="Heiraten und Hochzeitsfotos - Anno 1728">
@@ -9,7 +20,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">6. März 2019</p>
 		</div>
 
-		<img src="/images/blog/hochzeit-04.jpg" alt="Brautpaar vor dem historischen Fachwerkhaus" class="hero-image" />
+		<Image src={heroImg} alt="Brautpaar vor dem historischen Fachwerkhaus" class="hero-image" />
 
 		<div class="article-content">
 			<p>Sie können unser Denkmal für Ihre Fotos als Location nutzen. Unser mit dem Hessischen Denkmalschutzpreis ausgezeichnetes Fachwerkhaus bietet sowohl im Innen- als auch im Außenbereich wunderbare Möglichkeiten für Hochzeitsfotos. Eine so markante Kulisse für Hochzeitsfotos ist sonst wohl eher nur selten zu finden.</p>
@@ -18,15 +29,15 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 
 		<div class="image-gallery">
-			<img src="/images/blog/hochzeit-01.jpg" alt="Hochzeitsfoto vor dem Fachwerkhaus" />
-			<img src="/images/blog/hochzeit-02.jpg" alt="Brautpaar vor historischer Fassade" />
-			<img src="/images/blog/hochzeit-03.jpg" alt="Hochzeitsfotografie im Hof" />
-			<img src="/images/blog/hochzeit-04.jpg" alt="Braut vor dem Fachwerkhaus" />
-			<img src="/images/blog/hochzeit-05.jpg" alt="Hochzeitsfoto im Innenbereich" />
-			<img src="/images/blog/hochzeit-06.jpg" alt="Brautpaar im historischen Ambiente" />
-			<img src="/images/blog/hochzeit-07.jpg" alt="Hochzeitsfotos im Garten" />
-			<img src="/images/blog/hochzeit-08.jpg" alt="Romantische Hochzeitsfotografie" />
-			<img src="/images/blog/hochzeit-09.jpg" alt="Hochzeitsfoto mit Fachwerk-Kulisse" />
+			<Image src={img01} alt="Hochzeitsfoto vor dem Fachwerkhaus" />
+			<Image src={img02} alt="Brautpaar vor historischer Fassade" />
+			<Image src={img03} alt="Hochzeitsfotografie im Hof" />
+			<Image src={img04} alt="Braut vor dem Fachwerkhaus" />
+			<Image src={img05} alt="Hochzeitsfoto im Innenbereich" />
+			<Image src={img06} alt="Brautpaar im historischen Ambiente" />
+			<Image src={img07} alt="Hochzeitsfotos im Garten" />
+			<Image src={img08} alt="Romantische Hochzeitsfotografie" />
+			<Image src={img09} alt="Hochzeitsfoto mit Fachwerk-Kulisse" />
 		</div>
 
 		<a href="/blog/" class="back-link">Zurück zum Blog</a>

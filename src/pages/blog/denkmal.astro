@@ -1,5 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/denkmal-featured.jpg';
+import img01 from '../../assets/images/blog/denkmal-01.png';
+import img02 from '../../assets/images/blog/denkmal-02.png';
 ---
 
 <Layout title="Urlaub im Denkmal - Anno 1728">
@@ -9,14 +13,14 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">23. August 2017</p>
 		</div>
 
-		<img src="/images/blog/denkmal-featured.jpg" alt="Das denkmalgeschützte Fachwerkhaus Anno 1728" class="hero-image" />
+		<Image src={heroImg} alt="Das denkmalgeschützte Fachwerkhaus Anno 1728" class="hero-image" />
 
 		<div class="article-content">
 			<p>Suchen Sie bei Google nach „Urlaub im Denkmal", gibt es ausreichend Vorschläge. Geben Sie hingegen „Urlaub im Ferienhaus" ein, sieht die Welt ganz anders aus. 459.000 Einträge gegen 19.800.000: Wahnsinn!!!</p>
 
 			<div class="image-row">
-				<img src="/images/blog/denkmal-01.png" alt="Google-Suche: Urlaub im Denkmal - 459.000 Ergebnisse" />
-				<img src="/images/blog/denkmal-02.png" alt="Google-Suche: Urlaub im Ferienhaus - 19.800.000 Ergebnisse" />
+				<Image src={img01} alt="Google-Suche: Urlaub im Denkmal - 459.000 Ergebnisse" />
+				<Image src={img02} alt="Google-Suche: Urlaub im Ferienhaus - 19.800.000 Ergebnisse" />
 			</div>
 
 			<p>Erholsame Tage in einem Denkmal zu verbringen, ist offenbar etwas ganz Besonderes und unterscheidet sich natürlich von gängigen Ferienobjekten in einigen Punkten.</p>

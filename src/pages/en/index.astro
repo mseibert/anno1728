@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import vorderhausImg from '../../assets/images/anno-1728-com-wiesbaden-auringen-40.webp';
+import alterSpeicherImg from '../../assets/images/alter-speicher.jpg';
 ---
 
 <Layout title="Anno 1728 - Historic Vacation Home in Wiesbaden-Auringen" lang="en">
@@ -23,7 +26,7 @@ import Layout from '../../layouts/Layout.astro';
 	<div class="cards">
 		<a href="/en/vorderhaus/" class="card">
 			<div class="card-image">
-				<img src="/anno-1728-com-wiesbaden-auringen-40.webp" alt="Main House" />
+				<Image src={vorderhausImg} alt="Main House" />
 				<span class="photo-credit">Photo: Horst Goebel</span>
 			</div>
 			<div class="card-content">
@@ -34,7 +37,7 @@ import Layout from '../../layouts/Layout.astro';
 		</a>
 		<a href="/en/alter-speicher/" class="card">
 			<div class="card-image">
-				<img src="/alter-speicher.jpg" alt="Old Granary" />
+				<Image src={alterSpeicherImg} alt="Old Granary" />
 			</div>
 			<div class="card-content">
 				<h3>Old Granary</h3>

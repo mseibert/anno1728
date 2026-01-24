@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/technik-featured.jpg';
 ---
 
 <Layout title="Sesam öffne dich - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">3. August 2017</p>
 		</div>
 
-		<img src="/images/blog/technik-featured.jpg" alt="Moderner Zugang zum historischen Fachwerkhaus" class="hero-image" />
+		<Image src={heroImg} alt="Moderner Zugang zum historischen Fachwerkhaus" class="hero-image" />
 
 		<div class="article-content">
 			<p>Warum kompliziert, wenn's auch einfach geht?! Die Technik macht's möglich. Bei uns genießen Sie bei Ihrer An- und Abreise vollste Flexibilität und mit nur wenigen Handgriffen kann Ihr Urlaub starten…</p>

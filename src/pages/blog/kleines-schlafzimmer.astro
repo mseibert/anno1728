@@ -1,5 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/kleines-schlafzimmer-featured.jpg';
+import img01 from '../../assets/images/blog/traumfabrik-klein-01.jpg';
+import img02 from '../../assets/images/blog/traumfabrik-klein-02.jpg';
+import img03 from '../../assets/images/blog/traumfabrik-klein-03.jpg';
 ---
 
 <Layout title="Kleine Traumfabrik - Anno 1728">
@@ -9,16 +14,16 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">8. September 2017 · Foto: Horst Goebel</p>
 		</div>
 
-		<img src="/images/blog/kleines-schlafzimmer-featured.jpg" alt="Das kleine Schlafzimmer im warmen Licht" class="hero-image" />
+		<Image src={heroImg} alt="Das kleine Schlafzimmer im warmen Licht" class="hero-image" />
 
 		<div class="article-content">
 			<p>In unserer kleinen gemütlichen Traumfabrik können bis zu zwei Personen zur Ruhe kommen. Die Betten können sowohl nebeneinander als auch übereinander gestellt werden. Welche weitere Besonderheit das Zimmer bietet, erfahrt ihr in diesem Video.</p>
 		</div>
 
 		<div class="image-gallery">
-			<img src="/images/blog/traumfabrik-klein-01.jpg" alt="Kleines Schlafzimmer mit zwei Betten nebeneinander" />
-			<img src="/images/blog/traumfabrik-klein-02.jpg" alt="Kleines Schlafzimmer Detailansicht" />
-			<img src="/images/blog/traumfabrik-klein-03.jpg" alt="Kleines Schlafzimmer von oben" />
+			<Image src={img01} alt="Kleines Schlafzimmer mit zwei Betten nebeneinander" />
+			<Image src={img02} alt="Kleines Schlafzimmer Detailansicht" />
+			<Image src={img03} alt="Kleines Schlafzimmer von oben" />
 		</div>
 
 		<a href="/blog/" class="back-link">Zurück zum Blog</a>

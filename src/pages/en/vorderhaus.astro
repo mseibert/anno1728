@@ -1,23 +1,37 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Lightbox from '../../components/Lightbox.astro';
+import img00 from '../../assets/images/anno-1728-com-wiesbaden-auringen-40.webp';
+import img01 from '../../assets/images/gallery/gallery-01.jpg';
+import img02 from '../../assets/images/gallery/gallery-02.jpg';
+import img03 from '../../assets/images/gallery/gallery-03.jpg';
+import img04 from '../../assets/images/gallery/gallery-04.jpg';
+import img05 from '../../assets/images/gallery/gallery-05.jpg';
+import img06 from '../../assets/images/gallery/gallery-06.jpg';
+import img07 from '../../assets/images/gallery/gallery-07.jpg';
+import img08 from '../../assets/images/gallery/gallery-08.jpg';
+import img09 from '../../assets/images/gallery/gallery-09.jpg';
+import img10 from '../../assets/images/gallery/gallery-10.jpg';
+import img11 from '../../assets/images/gallery/gallery-11.jpg';
+import img12 from '../../assets/images/gallery/gallery-12.jpg';
 
 const gallery = [
-	{ src: '/anno-1728-com-wiesbaden-auringen-40.webp', alt: 'Exterior view of the listed half-timbered house Anno 1728' },
-	{ src: '/gallery-01.jpg', alt: 'Cozy living room with historic ceiling beams and armchairs' },
-	{ src: '/gallery-02.jpg', alt: 'Window with sunflowers in traditional stoneware vase' },
-	{ src: '/gallery-03.jpg', alt: 'Spacious bathroom with antique wooden furniture and glass shower' },
-	{ src: '/gallery-04.jpg', alt: 'Open window with view of the half-timbered facade' },
-	{ src: '/gallery-05.jpg', alt: 'Award-winning half-timbered facade with red beams and white plaster' },
-	{ src: '/gallery-06.jpg', alt: 'Cozy seating area with armchairs and round table under ceiling beams' },
-	{ src: '/gallery-07.jpg', alt: 'Small bedroom with single bed and historic green door' },
-	{ src: '/gallery-08.jpg', alt: 'Entrance of the half-timbered house with white front door and stone steps' },
-	{ src: '/gallery-09.jpg', alt: 'Blue vanity table with folding mirror at sunny window' },
-	{ src: '/gallery-10.jpg', alt: 'Large bedroom with double bed, wooden floors and vanity table' },
-	{ src: '/gallery-11.jpg', alt: 'Living room with white ceiling beams and historic wood stove' },
-	{ src: '/gallery-12.jpg', alt: 'Historic steep wooden staircase with worn steps' },
+	{ image: img00, alt: 'Exterior view of the listed half-timbered house Anno 1728' },
+	{ image: img01, alt: 'Cozy living room with historic ceiling beams and armchairs' },
+	{ image: img02, alt: 'Window with sunflowers in traditional stoneware vase' },
+	{ image: img03, alt: 'Spacious bathroom with antique wooden furniture and glass shower' },
+	{ image: img04, alt: 'Open window with view of the half-timbered facade' },
+	{ image: img05, alt: 'Award-winning half-timbered facade with red beams and white plaster' },
+	{ image: img06, alt: 'Cozy seating area with armchairs and round table under ceiling beams' },
+	{ image: img07, alt: 'Small bedroom with single bed and historic green door' },
+	{ image: img08, alt: 'Entrance of the half-timbered house with white front door and stone steps' },
+	{ image: img09, alt: 'Blue vanity table with folding mirror at sunny window' },
+	{ image: img10, alt: 'Large bedroom with double bed, wooden floors and vanity table' },
+	{ image: img11, alt: 'Living room with white ceiling beams and historic wood stove' },
+	{ image: img12, alt: 'Historic steep wooden staircase with worn steps' },
 ];
-const images = gallery.map(g => g.src);
+const images = gallery.map(g => g.image.src);
 ---
 
 <Layout title="Main House - Anno 1728" lang="en">
@@ -32,8 +46,8 @@ const images = gallery.map(g => g.src);
 		<div class="slides-container">
 			{gallery.map((img, index) => (
 				<div class={`slide ${index === 0 ? 'active' : ''}`}>
-					<img
-						src={img.src}
+					<Image
+						src={img.image}
 						alt={img.alt}
 						onclick={`openGalleryLightbox(${index})`}
 						style="cursor: pointer;"

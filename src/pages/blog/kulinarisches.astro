@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImg from '../../assets/images/blog/kulinarisches-featured.jpg';
 ---
 
 <Layout title="Kulinarisches aus Auringen - Anno 1728">
@@ -9,7 +11,7 @@ import Layout from '../../layouts/Layout.astro';
 			<p class="meta">14. August 2017 · Foto: Horst Goebel</p>
 		</div>
 
-		<img src="/images/blog/kulinarisches-featured.jpg" alt="Auringer Gaststätte" class="hero-image" />
+		<Image src={heroImg} alt="Auringer Gaststätte" class="hero-image" />
 
 		<div class="article-content">
 			<p>Zugegeben ist es nicht einfach, sich kulinarisch gegen die „Großen" – wie dem Rheingau und Frankfurt – zu behaupten, aber es finden sich doch so manche Köstlichkeiten in der Küche unserer schönen Region:</p>
